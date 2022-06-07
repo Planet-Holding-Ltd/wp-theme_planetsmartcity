@@ -1,0 +1,35 @@
+/*
+Theme Name: Planet Smart City
+Theme URI: https://wordpress.org/themes/twentytwentytwo/
+Author: Web Development Team of Planet Smart City 
+Author URI: https://wordpress.org/
+Description: A custom theme for Planet Smart City.
+Requires at least: 5.9
+Tested up to: 5.9
+Requires PHP: 5.6
+Version: 1.1
+License: TODO
+License URI: TODO
+Text Domain: planetsmartcity
+Tags: TODO
+
+TODO Planet Smart City WordPress Theme, (C) 2021 WordPress.org
+TODO Planet Smart City is distributed under the terms of the GNU GPL.
+*/
+
+/*
+ * Font settings.
+ */
+
+body {
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 400;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased; /*Font smoothing */
+}
+
+
+h1{
+	font-weight: 600;
+}
+
