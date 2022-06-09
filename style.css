@@ -23,13 +23,8 @@ TODO Planet Smart City is distributed under the terms of the GNU GPL.
 
 body {
 	font-family: 'Exo 2', sans-serif;
-	font-weight: 400;
+	font-weight: 600;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased; /*Font smoothing */
-}
-
-
-h1{
-	font-weight: 600;
 }
 

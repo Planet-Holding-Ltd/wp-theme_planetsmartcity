@@ -137,15 +137,6 @@ if (!function_exists('planetsmartcity_get_font_face_styles')) :
 			font-weight: 600;
 			src: url('" . get_theme_file_uri('assets/fonts/exo-2-v19-latin-600.woff2') . "') format('woff2');
 		}
-		/* exo-2-800 - latin */
-		@font-face {
-			font-display: swap;
-			font-family: 'Exo 2';
-			font-stretch: normal;
-			font-style: normal;
-			font-weight: 800;
-			src: url('" . get_theme_file_uri('assets/fonts/exo-2-v19-latin-800.woff2') . "') format('woff2');
-		}
 		";
 	}
 
@@ -154,12 +145,9 @@ endif;
 if (!function_exists('planetsmartcity_preload_webfonts')) :
 
 	/**
-	 * Preloads the main web font to improve performance.
+	 * Preload the main web fonts to improve performance.
 	 *
-	 * Only the main web font (font-style: normal) is preloaded here since that font is always relevant (it is used
-	 * on every heading, for example). The other font is only needed if there is any applicable content in italic style,
-	 * and therefore preloading it would in most cases regress performance when that font would otherwise not be loaded
-	 * at all.
+	 * Only the main web fonts (font-weight: 400 and 600) are preloaded here since that fonts are always relevant.
 	 *
 	 * @since Planet Smart City 1.0
 	 *
@@ -169,6 +157,7 @@ if (!function_exists('planetsmartcity_preload_webfonts')) :
 	{
 ?>
 		<link rel="preload" href="<?php echo esc_url(get_theme_file_uri('assets/fonts/exo-2-v19-latin-regular.woff2')); ?>" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="<?php echo esc_url(get_theme_file_uri('assets/fonts/exo-2-v19-latin-600.woff2')); ?>" as="font" type="font/woff2" crossorigin>
 <?php
 	}
 
