@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<title>Design System</title>
+
+
+<style>
+/*
+* Font Face Styles
+* 
+* This is where you can add your own font face styles.
+* Resources: https://google-webfonts-helper.herokuapp.com/fonts/exo-2?subsets=latin
+*
+/* exo-2-regular - latin */
+@font-face {
+font-display: swap;
+font-family: "Exo 2";
+font-stretch: normal;
+font-style: normal;
+font-weight: 400;
+src: url("../assets/fonts/exo-2-v19-latin-regular.woff2") format("woff");
+}
+
+/* exo-2-600 - latin */
+@font-face {
+font-display: swap;
+font-family: "Exo 2";
+font-stretch: normal;
+font-style: normal;
+font-weight: 600;
+src: url("../assets/fonts/exo-2-v19-latin-600.woff2") format("woff2");
+}
+</style>
+
+<link rel="preload" href="../assets/fonts/exo-2-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="../assets/fonts/exo-2-v19-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+
+<style>
+:root {
+/* accent colors */
+--juniper-cyan: #309BDA;
+--berry-blue: #3E4462;
+--cosmos-blue: #09091E;
+
+/* flavoring colors */
+--juniper-cyan: #309BDA;
+--berry-blue: #3E4462;
+--bean-green: #7EC152;
+--chilly-yellow: #EAAF3E;
+--pepper-red: #EA4753;
+--iron-grey: #EFF3F7;
+
+/* background colors */
+--surely-white: #fff;
+--iron-grey: #EFF3F7;
+
+/* spacing */
+--golden-ratio: 8px;
+
+
+/* big text */
+--big-text: 40px;
+
+/* medium text */
+--medium-text: 28px;
+
+/* header font */
+--header: 20px;
+--title: 44px;
+
+/* intersection */
+--carousel-intersection: 32px;
+--intersection: 36px;
+
+/* numbers */
+--numbers: 70px;
+
+/* buttons */
+
+--button: 18px;
+
+/* small-text */
+--small-text: 18px;
+
+/* menu voice */
+--menu-voice: 14px;
+
+/* font weight */
+--semibold: 600;
+--medium: 500;
+--regular: 400;
+
+
+--accent: var(--juniper-cyan);
+}
+
+* {
+box-sizing: border-box;
+font-family: "Exo 2", sans-serif;
+-webkit-font-smoothing: antialiased;
+}
+
+body {
+margin: 0;
+}
+
+/** 
+* # stack 
+**/
+
+.stack {
+padding: 80px 0;
+background-color: var(--surely-white);
+position: relative;
+}
+
+.stack--alt {
+background-color: var(--iron-grey);
+}
+
+/** 
+* # header 
+**/
+.header {
+display: grid;
+padding: 80px 0;
+}
+
+.header__wrapper {
+padding: 0 24px;
+}
+
+.header__title {
+color: var(--cosmos-blue);
+font-size: var(--title);
+font-weight: var(--semibold);
+letter-spacing: -2px;
+line-height: 44px;
+margin: 0;
+}
+
+.header__copy {
+color: var(--cosmos-blue);
+font-size: var(--small-text);
+font-weight: var(--regular);
+letter-spacing: -0.3px;
+line-height: 26px;
+}
+
+.header__title+.header__copy {
+margin-top: 24px;
+}
+
+.header__copy+.button {
+margin: 32px auto 0 auto;
+}
+
+.header__figure,
+.header__figure>*,
+.header__figure>*>* {
+height: auto;
+max-width: 546px;
+width: 100%;
+}
+
+.header__figure {
+margin: 80px auto 0 auto;
+}
+
+.heading {
+font-size: var(--intersection);
+line-height: 34px;
+max-width: 734px;
+font-weight: var(--semibold);
+letter-spacing: -1.5px;
+text-align: center;
+padding: 0 24px;
+}
+
+.heading--alt {
+text-align: left;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+.header {
+  align-items: center;
+  grid-template-columns: auto auto;
+  position: relative;
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.header__wrapper {
+  padding: 0 24px;
+  max-width: 546px;
+}
+
+.header--center {
+  grid-template-columns: auto;
+}
+
+.header--center>*,
+.header--center>*>* {
+  align-self: center;
+  margin: auto;
+  text-align: center;
+}
+
+/* somewhat shameful */
+.header--center .header__wrapper {
+  max-width: 100%;
+}
+
+.header__title+.header__copy {
+  margin-top: 32px;
+}
+
+.header__title {
+  max-width: 734px;
+}
+
+.header__copy {
+  max-width: 451px;
+}
+
+.header__copy+.button {
+  margin-top: 40px;
+}
+
+.header__figure {
+  margin: 0 auto;
+}
+
+.heading {
+  max-width: 734px;
+  text-align: center;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+
+.heading--alt {
+  text-align: center;
+  max-width: 734px;
+}
+
+}
+
+
+
+/** 
+* # link
+**/
+
+.link {
+color: var(--primary);
+text-decoration: none;
+}
+
+.link--inline {
+text-decoration: underline;
+}
+
+.link--standalone::after,
+.summary__link::after {
+background-color: currentColor;
+clip-path: padding-box inset(6px 0);
+content: '';
+margin-left: 8px;
+-webkit-mask-image: url("data:image/svg+xml,%3Csvg width='17px' height='21px' viewBox='0 0 17 6' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-814.000000, -2515.000000)' fill='%23309BDA' fill-rule='nonzero'%3E%3Cpath d='M830.68842,2520.70676 L826.438285,2524.70701 C826.022901,2525.09797 825.350516,2525.09735 824.935796,2524.70701 C824.520744,2524.31636 824.520744,2523.68351 824.935796,2523.29286 L827.374643,2521.00053 L815.062534,2521.00053 C814.475152,2521.00053 814,2520.55363 814,2519.97234 C814,2519.39106 814.475152,2519.00041 815.062534,2519.00041 L827.374643,2519.00041 L824.93812,2516.70714 C824.523068,2516.31649 824.523068,2515.68364 824.93812,2515.29299 C825.353172,2514.90234 826.025557,2514.90234 826.440609,2515.29299 L830.690744,2519.29324 C831.103472,2519.68482 831.103472,2520.31611 830.68842,2520.70676 Z' id='Path-Copy-6'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+mask-image: url("data:image/svg+xml,%3Csvg width='17px' height='10px' viewBox='0 0 17 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-814.000000, -2515.000000)' fill='%23309BDA' fill-rule='nonzero'%3E%3Cpath d='M830.68842,2520.70676 L826.438285,2524.70701 C826.022901,2525.09797 825.350516,2525.09735 824.935796,2524.70701 C824.520744,2524.31636 824.520744,2523.68351 824.935796,2523.29286 L827.374643,2521.00053 L815.062534,2521.00053 C814.475152,2521.00053 814,2520.55363 814,2519.97234 C814,2519.39106 814.475152,2519.00041 815.062534,2519.00041 L827.374643,2519.00041 L824.93812,2516.70714 C824.523068,2516.31649 824.523068,2515.68364 824.93812,2515.29299 C825.353172,2514.90234 826.025557,2514.90234 826.440609,2515.29299 L830.690744,2519.29324 C831.103472,2519.68482 831.103472,2520.31611 830.68842,2520.70676 Z' id='Path-Copy-6'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+-webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
+-webkit-mask-position: center;
+mask-position: center;
+padding: 0 8px;
+}
+
+.link--inherit {
+color: inherit;
+}
+
+.link--standalone {
+color: inherit;
+font-weight: var(--medium);
+letter-spacing: -0.5px;
+margin-top: 16px;
+text-decoration: underline;
+}
+
+
+
+/* rererence: https://www.carbondesignsystem.com/components/link/usage/#standalone-link */
+
+.link--stretched::after {
+background-color: rgba(0, 0, 0, 0);
+bottom: 0;
+content: '';
+left: 0;
+pointer-events: auto;
+position: absolute;
+right: 0;
+top: 0;
+z-index: 2;
+}
+
+
+
+.card--quinary .link,
+.card--inverse .link {
+color: var(--primary);
+}
+
+
+/** 
+* # button
+**/
+
+.button,
+.link {
+cursor: pointer;
+display: inline-block;
+font-size: var(--button);
+}
+
+.button {
+background-color: var(--juniper-cyan);
+border-radius: 8px;
+color: #ffffff;
+font-weight: var(--semibold);
+margin-top: 24px;
+min-width: 142px;
+/* padding: 12px 26.5px 16px 30.5px;  adjust font Exo margin*/
+padding: 13px 26.5px 15px 30.5px;
+text-align: center;
+text-decoration: none;
+}
+
+.button--inverse {
+background-color: #ffffff;
+color: var(--dark);
+}
+
+.button__append--download {
+background-color: currentColor;
+clip-path: padding-box inset(0.25em 0);
+content: '';
+margin-left: 10.5px;
+mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M360 431.1H24c-13.25 0-24 10.76-24 24.02C0 469.2 10.75 480 24 480h336c13.25 0 24-10.76 24-24.02C384 442.7 373.3 431.1 360 431.1zM302.5 207.7L216 299.7v-243.6C216 42.76 205.3 32 192 32S168 42.76 168 56.02v243.6L81.47 207.7C76.75 202.6 70.38 200.1 64 200.1c-5.906 0-11.81 2.158-16.44 6.536c-9.656 9.069-10.12 24.27-1.031 33.93l128 136.1c9.062 9.694 25.88 9.694 34.94 0l128-136.1c9.094-9.663 8.625-24.86-1.031-33.93C326.8 197.5 311.6 197.1 302.5 207.7z'/%3E%3C/svg%3E");
+-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M360 431.1H24c-13.25 0-24 10.76-24 24.02C0 469.2 10.75 480 24 480h336c13.25 0 24-10.76 24-24.02C384 442.7 373.3 431.1 360 431.1zM302.5 207.7L216 299.7v-243.6C216 42.76 205.3 32 192 32S168 42.76 168 56.02v243.6L81.47 207.7C76.75 202.6 70.38 200.1 64 200.1c-5.906 0-11.81 2.158-16.44 6.536c-9.656 9.069-10.12 24.27-1.031 33.93l128 136.1c9.062 9.694 25.88 9.694 34.94 0l128-136.1c9.094-9.663 8.625-24.86-1.031-33.93C326.8 197.5 311.6 197.1 302.5 207.7z'/%3E%3C/svg%3E");
+-webkit-mask-repeat: no-repeat;
+-webkit-mask-position: center;
+mask-repeat: no-repeat;
+mask-position: center;
+padding: 0.1em 0.4em;
+vertical-align: middle;
+}
+
+.button--prefooter {
+margin-top: 32px;
+}
+
+
+/* iPad Mini in portrait & landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+.button__append--download {
+  padding: 0.11em 0.52em !important;
+}
+
+}
+
+
+
+/** 
+* # embed block 
+**/
+
+.embed {
+border-radius: calc(var(--golden-ratio) *2);
+height: 488px;
+margin: 0 auto;
+max-width: 366px;
+position: relative;
+width: 100%;
+padding: 0 24px;
+}
+
+.embed__item {
+border-radius: inherit;
+height: inherit;
+object-fit: cover;
+/* manage poster video */
+width: inherit;
+}
+
+.embed__cta {
+align-items: center;
+bottom: 0;
+display: grid;
+height: 100%;
+justify-items: center;
+left: 0;
+position: absolute;
+right: 0;
+top: 0;
+z-index: 1;
+width: 100%;
+
+}
+
+.embed__cta svg {
+cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+.embed {
+  border-radius: calc(var(--golden-ratio) *3);
+  height: 515px;
+  max-width: 926px;
+}
+}
+
+/** 
+* # card 
+**/
+
+.card--upside {
+/* don't use grid because weird behavior on safari iPhone 13 and cease to respect margin in .card-group+.heading
+align-items: end;
+display: grid; 
+*/
+display: flex;
+place-items: flex-end;
+}
+
+.card-group {
+display: grid;
+grid-gap: 24px;
+grid-template-columns: auto;
+margin-left: auto;
+margin-right: auto;
+max-width: fit-content;
+padding-left: 24px;
+padding-right: 24px;
+}
+
+.card {
+aspect-ratio: 400/601;
+border-radius: calc(var(--golden-ratio) *2);
+max-width: 400px;
+padding: 40px 32px;
+/* padding-right: 64px; legacy version */
+position: relative;
+width: 100%;
+}
+
+@supports not (aspect-ratio: 400/601) {
+.card {
+  min-height: 601px;
+}
+}
+
+.card--inverse {
+background: var(--cosmos-blue);
+}
+
+.card--inverse>* {
+color: var(--surely-white);
+}
+
+.card--inverse .link {
+color: var(--juniper-cyan);
+}
+
+
+.card__headline {
+font-size: var(--medium-text);
+font-weight: var(--semibold);
+letter-spacing: -1px;
+line-height: 30px;
+}
+
+.card__headline--big {
+font-size: var(--big-text);
+letter-spacing: -1px;
+line-height: 42px;
+}
+
+.card__copy {
+font-size: var(--small-text);
+font-weight: var(--semibold);
+letter-spacing: -.5px;
+line-height: 22px;
+}
+
+.card__headline+.card__copy {
+margin-top: 16px;
+}
+
+.card__header,
+.card__copy,
+.card__cta {
+position: relative;
+z-index: 1;
+font-weight: var(--semibold);
+}
+
+
+
+
+.card__header+.card__body {
+margin-top: 32px;
+
+}
+
+.card__figure {
+bottom: 0;
+height: 100%;
+margin: 0;
+position: absolute;
+right: 0;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 0;
+border-radius: inherit;
+}
+
+
+
+.card__figure,
+.card__figure>*,
+.card__figure>*>* {
+border-radius: inherit;
+}
+
+.card__figure img {
+object-position: center;
+width: 100%;
+height: 100%;
+display: block;
+position: relative;
+object-fit: cover;
+}
+
+
+
+.card--prefooter {
+aspect-ratio: 366/350;
+display: grid;
+align-items: center;
+text-align: center;
+}
+
+@supports not (aspect-ratio: 366/350) {
+.card--prefooter {
+  min-height: 350px;
+}
+}
+
+
+.card__bullet {
+list-style-type: none;
+margin-bottom: 0;
+margin-top: 0;
+padding-left: 0;
+}
+
+.card__bullet li {
+background: url("data:image/svg+xml,%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-56.000000, -2069.000000)'%3E%3Cg transform='translate(56.000000, 2069.000000)'%3E%3Crect fill='%23FFFFFF' x='0' y='0' width='18' height='18' rx='9'%3E%3C/rect%3E%3Cg transform='translate(4.800000, 6.000000)' fill='%2318214D'%3E%3Cpath d='M8.22420894,0.176072325 C8.45859702,0.410460405 8.45859702,0.789231542 8.22420894,1.02361962 L3.42394107,5.82388749 C3.18955299,6.05827557 2.81078185,6.05827557 2.57639377,5.82388749 L0.175734807,3.42375356 C-0.0585782689,3.18936548 -0.0585782689,2.81059434 0.175734807,2.57620626 C0.410085384,2.34181818 0.789981584,2.34181818 1.02436966,2.57620626 L2.98329148,4.55069144 L7.37666164,0.176072325 C7.61104972,-0.0586907752 7.98982086,-0.0586907752 8.22420894,0.176072325 L8.22420894,0.176072325 Z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-position-y: 3px;
+background-repeat: no-repeat;
+margin-bottom: 2rem;
+padding-left: 26px;
+}
+
+.card__bullet li:last-of-type {
+margin-bottom: 0;
+}
+
+.card-group+.tile-group {
+margin-top: 24px;
+}
+
+.card-group+.heading,
+.swiper+.heading {
+margin-top: 80px;
+}
+
+
+/* card--reveal variant */
+.card--reveal {
+/* prevent overflow on safari */
+clip-path: content-box;
+-webkit-clip-path: content-box;
+display: grid;
+grid-template-rows: auto min-content;
+overflow: hidden;
+padding: 0;
+}
+
+.card--reveal .card__header {
+align-items: center;
+background-color: inherit;
+display: grid;
+grid-template-columns: auto min-content;
+order: 2;
+padding: 20px 30px 28px 32px;
+z-index: 2;
+}
+
+.card--reveal .card__body {
+align-self: end;
+background-color: inherit;
+/*border-radius: 16px 16px 0 0;*/
+height: 100%;
+order: 1;
+padding: 40px 32px;
+transform: translateY(100%);
+-webkit-transition: transform 1s ease;
+-moz-transition: transform 1s ease;
+-o-transition: transform 1s ease;
+-ms-transition: transform 1s ease;
+transition: transform 1s ease;
+z-index: 1;
+}
+
+.card--reveal .card__header+.card__body {
+margin-top: 0;
+}
+
+.card--reveal.is-open .card__body {
+transform: translateY(0);
+}
+
+.toggle {
+cursor: pointer;
+}
+
+.toggle svg {
+fill: var(--surely-white);
+height: 30px;
+-webkit-transition: transform 1s ease;
+-moz-transition: transform 1s ease;
+-o-transition: transform 1s ease;
+-ms-transition: transform 1s ease;
+transition: transform 1s ease;
+width: 30px;
+}
+
+.card--reveal.is-open .toggle svg {
+transform: rotate(45deg);
+}
+
+
+@media only screen and (min-width: 768px) {
+
+.card--wide {
+  aspect-ratio: 824/260;
+  display: grid;
+  grid-column: span 2;
+  grid-template-columns: 1fr 1fr;
+  /*50% of wide card minus right padding plus half grid gutter*/
+  grid-template-rows: min-content;
+  max-width: 824px;
+  min-height: 260px;
+  width: 100%;
+}
+
+.card--prefooter {
+  aspect-ratio: 824/260;
+  display: grid;
+  grid-column: span 2;
+  grid-template-columns: 1fr;
+  max-width: 824px;
+  min-height: 260px;
+  margin-left: auto;
+  width: 100%;
+}
+
+
+
+.card--wider {
+  grid-template-columns: calc(60% - calc(40px + calc(24px / 2)));
+}
+
+.card-group+.heading,
+.swiper+.heading {
+  margin-top: 100px;
+}
+
+.card-group {
+  grid-template-columns: repeat(2, auto);
+  padding: 0;
+}
+
+}
+
+@supports not (aspect-ratio: 824/260) {
+.card--wide {
+  min-height: 260px;
+}
+}
+
+
+
+/**
+* # slide block
+**/
+
+.slide {
+aspect-ratio: 3/4;
+background-color: var(--surely-white);
+border-radius: calc(var(--golden-ratio) *3);
+height: 100%;
+max-height: 372px;
+max-width: 279px;
+padding: 32px;
+position: relative;
+}
+
+@supports not (aspect-ratio: 3/4) {
+.slide:not(.slide--nav-item) {
+  min-height: 413px;
+}
+}
+
+.slide--center {
+text-align: center;
+}
+
+.slide--inverse {
+background: var(--cosmos-blue);
+}
+
+.slide--inverse>* {
+color: var(--surely-white);
+}
+
+.slide--small {
+max-height: 250px;
+max-width: 187.5px;
+border-radius: 16px;
+}
+
+.slide__copy {
+font-size: var(--small-text);
+font-weight: var(--semibold);
+letter-spacing: -0.5px;
+line-height: 20px;
+}
+
+.slide__title+.slide__copy {
+opacity: 0.7;
+padding-top: 1rem;
+}
+
+.slide__header+.slide__body {
+margin-top: 24px;
+}
+
+.slide__figure,
+.slide__figure>*,
+.slide__figure>*>* {
+aspect-ratio: inherit;
+width: 100%;
+height: 100%;
+}
+
+.slide__figure>*, .slide__figure>*>* {
+    border-radius: inherit;
+}
+
+.slide__header {
+z-index: 1;
+position: relative;
+}
+
+.slide__title {
+font-size: var(--medium-text);
+line-height: 26px;
+letter-spacing: -1px;
+font-weight: var(--semibold);
+}
+
+.slide__title--big {
+font-size: 30px;
+line-height: 34px;
+letter-spacing: -1.5px;
+}
+
+.slide__title+.slide__subtitle {
+margin-top: 6px;
+}
+
+.slide__subtitle {
+font-size: 12px;
+letter-spacing: -.5px;
+line-height: 14px;
+}
+
+.slide__figure--stack {
+aspect-ratio: 216/161;
+border-radius: 14px;
+height: auto;
+position: unset;
+width: 100%;
+}
+
+.slide__figure--stack {
+margin: 24px auto;
+}
+
+.slide__copy--small {
+font-size: 14px;
+letter-spacing: -.5px;
+line-height: 18px;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+.slide {
+  max-height: 412px;
+  max-width: 309px;
+}
+
+.slide--small {
+  max-height: 400px;
+  max-width: 300px;
+}
+
+.slide__copy:not(.slide__copy--small) {
+  font-size: 22px;
+  letter-spacing: -1px;
+  line-height: 26px;
+}
+
+.slide__title+.slide__copy {
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  line-height: 22px;
+}
+}
+
+
+
+
+/**
+* # dialog
+*/
+.dialog {
+background: linear-gradient(rgba(30, 30, 30, .9), #000 1810%);
+display: none;
+height: 100%;
+left: 0;
+position: fixed;
+overflow: auto;
+top: 0;
+/* touch-action: pinch-zoom;  error on iPhone SE */
+width: 100%;
+z-index: 99999;
+/* Sit on top, higher than slide carousel and nav */
+}
+
+
+.dialog-form {
+background: linear-gradient(rgba(30, 30, 30, .9), #000 1810%);
+display: none;
+height: 100%;
+left: 0;
+position: fixed;
+overflow: auto;
+top: 0;
+width: 100%;
+z-index: 99999;
+/* Sit on top, higher than slide carousel and nav */
+}
+
+
+.show-dialog,
+.show-dialog-form {
+display: block;
+}
+
+/* Dialog Content/Box */
+.dialog-content {
+align-items: center;
+animation-name: animatetop;
+animation-duration: 0.4s;
+box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+display: flex;
+flex-wrap: wrap;
+height: 100%;
+justify-content: center;
+margin: auto;
+position: relative;
+padding: 0;
+}
+
+
+/* Add Animation */
+@keyframes animatetop {
+from {
+  opacity: 0
+}
+
+to {
+  opacity: 1
+}
+}
+
+/* The Close Button */
+.close-dialog,
+.close-dialog-form {
+color: #fff;
+float: right;
+font-size: 55px;
+font-weight: 200;
+position: absolute;
+top: 2%;
+right: 3%;
+z-index: 1;
+}
+
+.close-dialog:hover,
+.close-dialog:focus,
+.close-dialog-form:hover,
+.close-dialog-form:focus {
+color: rgb(240, 233, 233);
+cursor: pointer;
+text-decoration: none;
+}
+
+
+
+/** 
+* # accordion block 
+**/
+
+.accordion {
+background: none;
+border: none;
+color: var(--cosmos-blue);
+cursor: pointer;
+display: block;
+font-size: var(--small-text);
+font-weight: var(--semibold);
+letter-spacing: -0.5px;
+margin: 0 auto;
+max-width: 926px;
+outline: none;
+padding: 0;
+text-align: left;
+transition: 0.4s;
+width: 100%;
+}
+
+.accordion__wrapper {
+border-bottom: 1px solid #d3d3d3;
+margin: auto;
+max-width: 926px;
+padding: 24px 0 31px;
+width: calc(100% - 5.8% * 2);
+}
+
+.accordion__wrapper:last-child {
+border-bottom: none;
+}
+
+.accordion__label {
+display: inline-block;
+width: calc(100% - 22px);
+}
+
+.accordion__panel {
+font-size: var(--small-text);
+letter-spacing: -0.5px;
+line-height: 22px;
+margin: 0 auto;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out;
+}
+
+.accordion__panel div {
+margin-bottom: 0;
+margin-top: 24px;
+}
+
+.accordion__panel ul {
+padding-left: 0;
+}
+
+.accordion__panel a {
+color: var(--juniper-cyan);
+}
+
+.accordion:after {
+background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-364.000000, -7182.000000)'%3E%3Cg transform='translate(364.000000, 7182.000000)'%3E%3Crect fill-opacity='0' fill='%23E9EBED' x='0' y='0' width='20' height='20'%3E%3C/rect%3E%3Cpath d='M16.8580357,14.1401786 C16.5656071,14.1401786 16.2730357,14.0285714 16.0501786,13.8053571 L10.0008929,7.75803571 L3.95089286,13.8080357 C3.50446429,14.2544643 2.78125,14.2544643 2.33482143,13.8080357 C1.88839286,13.3616071 1.88839286,12.6383929 2.33482143,12.1919643 L9.19196429,5.33482143 C9.63839286,4.88839286 10.3616071,4.88839286 10.8080357,5.33482143 L17.6651786,12.1919643 C18.1116071,12.6383929 18.1116071,13.3616071 17.6651786,13.8080357 C17.44375,14.0294643 17.1508929,14.1401786 16.8580357,14.1401786 Z' fill='%2318214D' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-repeat: no-repeat;
+content: '';
+float: right;
+height: 22px;
+transition: transform .3s ease-in-out;
+width: 22px;
+-webkit-transition: -webkit-transform .3s ease-in-out;
+-ms-transition: -ms-transform .3s ease-in-out;
+transform: rotate(-180deg);
+}
+
+.accordion.active:after {
+content: '';
+display: inline-block;
+transform: rotate(0deg);
+}
+
+@media only screen and (min-width: 768px) {
+.accordion__label {
+  font-size: var(--medium-text);
+}
+
+.accordion__panel div {
+  margin-top: 32px;
+}
+}
+
+/* ONLY FOR DEMO */
+
+p.titling {
+color: #ababab;
+font-size: 11px;
+opacity: 1;
+position: absolute;
+top: 0;
+border: 1px dashed;
+padding: 3px;
+}
+
+p.titling span {
+font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+<main>
+
+
+<div class="stack stack--alt">
+<p class="titling"><span>&#128650;</span> Organism / Header / Main Header</p>
+<div class="header__wrapper">
+  <h1 class="header__title">
+    Lorem ipsum dolor sit amet altersit consectetur.
+  </h1>
+  <div class="header__copy">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh
+    finibus et. Aenean eu enim justo.
+  </div>
+  <a class="button button--primary">Button text</a>
+</div>
+</div>
+
+<div class="stack">
+<p class="titling"><span>&#128650;</span> Organism / Header / Intersection Header</p>
+<div class="heading">
+  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+</div>
+</div>
+<div class="stack stack--alt">
+<p class="titling"><span>&#128650;</span> Organism / Header / Carousel Intersection</p>
+<div class="heading heading--alt">
+  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+</div>
+</div>
+
+<div class="stack">
+<p class="titling"><span>&#128650;</span> Molecule / Carousel / Card (Slide)</p>
+<div class="slide slide--center slide--inverse">
+  <div class="slide__header">
+    <div class="slide__title">Maecenas varius tortor nibh</div>
+    <div class="slide__copy">
+      Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="stack stack--alt">
+  <p class="titling"><span>&#128650;</span>  Molecule / Carousel / Polaroid</p>
+<div class="slide slide--center">
+  <div class="slide__header">
+    <div class="slide__title">Smart City Laguna</div>
+    <div class="slide__subtitle">
+      Cearà, Brazil
+    </div>
+  </div>
+  <figure class="slide__figure slide__figure--stack">
+    <picture>
+      <img src="https://hips.hearstapps.com/esq.h-cdn.co/assets/cm/15/05/54ce0a17635dd_-_esq-adventure-time-0313-xlg-5652662.jpg" alt="Polaroid" width="216" height="161" loading="eager" decoding="async">
+    </picture>
+  </figure>
+  <div class="slide__body">
+    <div class="slide__copy slide__copy--small">
+      330 Hectares<br />
+20,000 Future residents<br />
+58 Smart Solutions
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="stack">
+<p class="titling"><span>&#128650;</span> Organism / Card / Text Card</p>
+<div class="card-group">
+  <div class="card card--inverse">
+    <div class="card__header">
+      <div class="card__copy">
+        <span class="text-muted">
+          Lorem ipsum dolor sit amet
+          consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu
+          enim
+          justo.</span>
+      </div>
+    </div>
+    <div class="card__cta">
+      <a class="card__cta link link--standalone" href="#">Button text</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="stack stack--alt">
+<p class="titling"><span>&#128650;</span> Organism / Card / Text Card Medium Text</p>
+<div class="card-group">
+  <div class="card card--inverse">
+    <div class="card__header">
+      <div class="card__headline">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor niborci.
+      </div>
+    </div>
+    <div class="card__cta">
+      <a class="card__cta link link--standalone" href="#">Button text</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="stack">
+<p class="titling"><span>&#128650;</span> Organism / Card / Text Card Big Text</p>
+<div class="card-group">
+  <div class="card card--inverse">
+    <div class="card__header">
+      <div class="card__headline card__headline--big">
+        Lorem ipsum dolor sit amet, adipiscing elit.
+      </div>
+    </div>
+    <div class="card__cta">
+      <a class="card__cta link link--standalone" href="#">Button text</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="stack stack--alt">
+<p class="titling"><span>&#128650;</span> Organism / Card / Text Card Bulletpoint</p>
+<div class="card-group">
+  <div class="card card--inverse">
+    <div class="card__header">
+      <div class="card__body">
+        <div class="card__copy">
+          <ul class="card__bullet">
+            <li>
+              Lorem ipsum dolor sit amet con adipiscing elit, maecenas varius tortor nibh ale garand.
+            </li>
+            <li>
+              Integer id nisi nec nulla luctus lacinia non eu turpis etiam in ex imperdiet justo tincidunt
+              egestas.
+            </li>
+            <li>
+              Maecenas varius tortor nibh, sit amet tempor nibh finibus et aenean eu enim justo vestibulum.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card card--inverse card--upside">
+    <div class="card__header">
+      <div class="card__body">
+        <div class="card__copy">
+          <ul class="card__bullet">
+            <li>
+              Maecenas varius tortor nibh, sit amet tempor nibh finibus et aenean eu enim justo vestibulum.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet con adipiscing elit, maecenas varius tortor nibh ale garand.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="stack stack--alt">
+<p class="titling"><span>&#128650;</span> Organism / Card / Rollup</p>
+<div class="card-group">
+  <div class="card card--inverse card--reveal">
+    <div class="card__header">
+      <div class="card__headline">
+        Title<br>
+        <span class="card__copy">Subtitle</span>
+      </div>
+      <div class="toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM256 368C269.3 368 280 357.3 280 344V280H344C357.3 280 368 269.3 368 256C368 242.7 357.3 232 344 232H280V168C280 154.7 269.3 144 256 144C242.7 144 232 154.7 232 168V232H168C154.7 232 144 242.7 144 256C144 269.3 154.7 280 168 280H232V344C232 357.3 242.7 368 256 368z">
+          </path>
+        </svg>
+      </div>
+    </div>
+    <div class="card__body">
+      <div class="card__copy">
+        Lorem ipsum dolor sit amet con adipiscing elit, maecenas varius tortor nibh ale garand.
+        Lorem ipsum dolor sit amet con adipiscing elit, maecenas varius tortor nibh ale garand.
+        Lorem ipsum dolor sit amet con adipiscing elit, maecenas varius tortor nibh ale garand.
+      </div>
+    </div>
+    <figure class="card__figure">
+      <picture>
+        <img
+          src="https://hips.hearstapps.com/esq.h-cdn.co/assets/cm/15/05/54ce0a17635dd_-_esq-adventure-time-0313-xlg-5652662.jpg"
+          alt="Rollup" width="400" height="601" loading="eager" decoding="async">
+      </picture>
+    </figure>
+  </div>
+</div>
+</div>
+
+<div class="stack">
+<p class="titling"><span>&#128650;</span> Organism / Card / Prefooter</p>
+<div class="card-group">
+  <div class="card card--inverse card--prefooter">
+    <div class="card__header">
+      <div class="card__headline">
+        Want to explore more?
+      </div>
+      <div class="card__copy">
+        <span class="text-muted">Contact us, get in touch and ask to see our services in action.</span>
+      </div>
+      <a class="button button--primary button--prefooter dialog__cta">Get in touch</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="stack stack--alt">
+<p class="titling"><span>&#128650;</span> Organism / Card / Video</p>
+<div class="embed">
+  <video class="embed__item" width="320" height="240" autoplay="" loop="" playsinline="" muted=""
+    poster="https://hips.hearstapps.com/esq.h-cdn.co/assets/cm/15/05/54ce0a17635dd_-_esq-adventure-time-0313-xlg-5652662.jpg"
+    src="https://static.videezy.com/system/resources/previews/000/039/794/original/alb_cityscp101_1080p.mp4"></video>
+  <div class="embed__cta">
+    <svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+          <circle fill="#309BDA" cx="32" cy="32" r="32"></circle>
+          <g transform="translate(20.000000, 20.000000)" fill="#FFFFFF">
+            <path
+              d="M7.14295281,22 C5.91968391,22 5,20.9999554 5,19.8570472 L5,4.14205991 C5,3.00897361 5.91075494,2 7.14339926,2 C7.53118443,2 7.91798741,2.10500469 8.26041341,2.31389794 L21.1181303,10.1713916 C21.7552123,10.5619894 22.1436225,11.2539846 22.1436225,11.9995536 C22.1436225,12.7451226 21.7550784,13.4384571 21.1181303,13.8277602 L8.26041341,21.6852538 C7.9197732,21.8928524 7.53136301,22 7.14295281,22 Z">
+            </path>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+<div class="dialog dialog-video">
+  <span class="close-dialog">×</span>
+  <!-- Dialog content -->
+  <div class="dialog-header"></div>
+  <div class="dialog-content">
+    <iframe class="video-iframe" width="720" height="405" src="https://www.youtube.com/embed/v6N7222NZBg"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen=""></iframe>
+  </div>
+</div>
+</div>
+
+<div class="stack">
+<p class="titling"><span>&#128650;</span> Organism / Misc / FAQ</p>
+<div class="accordion__wrapper">
+  <button class="accordion">
+    <span class="accordion__label">Aenane eu enim justo?</span>
+  </button>
+  <div class="accordion__panel">
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh
+      finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie.
+    </div>
+  </div>
+</div>
+<div class="accordion__wrapper">
+  <button class="accordion">
+    <span class="accordion__label">Vestibulum aliquam hendrerit?</span>
+  </button>
+  <div class="accordion__panel">
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh
+      finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie.
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+</main>
+
+
+<script>
+
+// # card reveal
+const revealElementCheck = document.querySelector(".card--reveal") !== null;
+if (revealElementCheck) {
+const revealElements = document.querySelectorAll(".card--reveal");
+for (const revealElement of revealElements) {
+  const revealer = revealElement.querySelector(".toggle");
+  // when revealer is clicked add class "is-open" to revealElement
+  revealer.addEventListener("click", () => {
+    console.trace();
+    revealElement.classList.toggle("is-open");
+  });
+}
+}
+
+// # embed dialog video
+const embedCTACheck = document.querySelector(".embed__cta") !== null;
+if (embedCTACheck) {
+
+const embedCTAs = document.querySelectorAll(".embed__cta");
+const videoIFrame = document.querySelector("iframe");
+const srcUrl = videoIFrame.getAttribute("src");
+
+for (let embedCTA of embedCTAs) {
+  embedCTA.addEventListener("click", function () {
+    const dialogVideo = document.querySelector(".dialog-video");
+    dialogVideo.classList.add("show-dialog");
+    videoIFrame.setAttribute("src", srcUrl);
+
+    const closeButton = dialogVideo.querySelector(".close-dialog");
+    closeButton.addEventListener("click", function () {
+      console.trace();
+      dialogVideo.classList.remove("show-dialog");
+      dialogVideo.querySelector(".video-iframe").setAttribute("src", "");
+
+    });
+  });
+}
+}
+
+// # accordion
+// create accordion
+const accordionCheck = document.querySelector(".accordion") !== null;
+if (accordionCheck) {
+const accordions = document.querySelectorAll(".accordion");
+for (const accordion of accordions) {
+  accordion.addEventListener("click", function () {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+}
+
+</script>
+</body>
+
+</html>
