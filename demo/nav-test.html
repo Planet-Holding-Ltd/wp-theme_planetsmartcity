@@ -436,14 +436,17 @@
         display: inline;
       }
 
-      .navbar-nav li.drop-down>a:hover::after {
-        top: 5px;
-      }
+     
 
-      #nav li.menu-item.current-menu-item a {
+      #nav li.menu-item:hover a {
         color: var(--juniper-cyan);
 
       }
+      
+      .navbar li.drop-down:hover > a::after {
+      content: url("data:image/svg+xml,%3Csvg width='8px' height='17px' viewBox='0 0 8 17' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg fill='%23309bda'%3E%3Cpath d='M3.99973215,13 C3.8535244,13 3.70724521,12.9389648 3.59582162,12.8168945 L0.167403241,9.06689453 C-0.0558010803,8.82275391 -0.0558010803,8.42724609 0.167403241,8.18310547 C0.390607562,7.93896484 0.752198563,7.93896484 0.975402884,8.18310547 L3.99973215,11.4921875 L7.02459712,8.18359375 C7.24780144,7.93945312 7.60939244,7.93945312 7.83259676,8.18359375 C8.05580108,8.42773438 8.05580108,8.82324219 7.83259676,9.06738281 L4.40417838,12.8173828 C4.29257622,12.9394531 4.14615419,13 3.99973215,13 Z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      display:inline-block;
+    }
 
       .nav {
         display: flex;
@@ -508,12 +511,10 @@
         display: flex;
         align-items: center;
         -ms-flex-preferred-size: 100%;
-        /* flex-basis: 100%; */
         -ms-flex-align: center;
         visibility: visible;
         min-width: 50vw;
         width: auto;
-        /* left: 0; */
         right: 0;
         overflow: visible;
         box-shadow: none;
@@ -625,15 +626,6 @@
         margin-left: 0
       }
 
-      .bg-transparent .navbar-nav .nav-link.current-menu-item>a {
-        color: var(--blue);
-      }
-
-      .bg-transparent,
-      .slide-up {
-        transition: all .25s linear
-      }
-
       .navbar-expand-lg .navbar-toggler {
         display: none;
       }
@@ -692,7 +684,6 @@
         content: "";
         height: 0;
         left: 0;
-        /* margin-left: -10px; */
         position: absolute;
         top: 0px;
         width: 0;
@@ -714,18 +705,6 @@
 
       .d-none {
         display: none;
-      }
-
-      .bg-transparent {
-        background-color: transparent;
-      }
-
-      .secondary__nav {
-        text-align: right;
-      }
-
-      .tertiary__nav {
-        text-align: center;
       }
 
       .navbar-expand-lg .navbar-nav {
@@ -814,7 +793,7 @@
         <div id="nav-content">
           <ul id="menu-menu-primary" class="navbar-nav">
             <li class="drop-down menu-item"><a href="#">Products</a>
-              <ul class="sub-menu subrollin">
+              <ul class="sub-menu">
                 <li class="menu-item"><a href="#">Sub item one</a></li>
                 <li class="menu-item"><a href="#">Sub item two</a></li>
                 <li class="menu-item"><a href="#">Sub item three</a></li>
@@ -822,7 +801,7 @@
               </ul>
             </li>
             <li class="drop-down  menu-item"><a href="#">Smart Solutions</a>
-              <ul class="sub-menu subrollin">
+              <ul class="sub-menu">
                 <li class="menu-item"><a href="#">Sub item one</a></li>
                 <li class="menu-item"><a href="#">Sub item two</a></li>
                 <li class="menu-item"><a href="#">Sub item three</a></li>
@@ -832,7 +811,7 @@
             <li class="menu-item"><a href="#">About</a></li>
             <li class="menu-item"><a href="#">Real Estate</a></li>
             <li class="drop-down menu-item"><a href="#">Resources</a>
-              <ul class="sub-menu subrollin">
+              <ul class="sub-menu">
                 <li class="menu-item"><a href="#">Sub item one</a></li>
                 <li class="menu-item"><a href="#">Sub item two</a></li>
                 <li class="menu-item"><a href="#">Sub item three</a></li>
@@ -895,7 +874,7 @@
     }
 
     const dropDownCheck = document.querySelector(".drop-down") !== null;
-    if (window.innerWidth < 992 && dropDownCheck) { // code for large screens
+    if (window.innerWidth < 992 && dropDownCheck) { // avoid 'click event' on large screens
 
       const dropDowns = document.querySelectorAll(".drop-down.menu-item");
       for (const dropDown of dropDowns) {

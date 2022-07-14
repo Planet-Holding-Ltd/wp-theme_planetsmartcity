@@ -6,12 +6,8 @@
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <title>Design System - Swipers</title>
 
-   <!-- Swiper https://swiperjs.com/ -->
-   <link
-   rel="stylesheet"
-   href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-   media="all"
- />
+  <!-- Swiper https://swiperjs.com/ -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" media="all" />
   <style>
     /*
 * Font Face Styles
@@ -106,17 +102,17 @@
       -webkit-font-smoothing: antialiased;
       box-sizing: border-box;
       font-family: "Exo 2", sans-serif;
-  }
+    }
 
     body {
       margin: 0;
-  }
+    }
 
     img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
 
     /** 
 * # stack 
@@ -126,11 +122,11 @@
       background-color: var(--surely-white);
       padding: 80px 0;
       position: relative;
-  }
+    }
 
     .stack--alt {
       background-color: var(--iron-grey);
-  }
+    }
 
     /** 
 * # header 
@@ -138,11 +134,11 @@
     .header {
       display: grid;
       padding: 80px 0;
-  }
+    }
 
     .header__wrapper {
       padding: 0 24px;
-  }
+    }
 
     .header__title {
       color: var(--cosmos-blue);
@@ -151,7 +147,7 @@
       letter-spacing: -2px;
       line-height: 44px;
       margin: 0;
-  }
+    }
 
     .header__copy {
       color: var(--cosmos-blue);
@@ -159,15 +155,15 @@
       font-weight: var(--regular);
       letter-spacing: -0.3px;
       line-height: 26px;
-  }
+    }
 
     .header__title+.header__copy {
       margin-top: 24px;
-  }
+    }
 
     .header__copy+.button {
       margin: 32px auto 0 auto;
-  }
+    }
 
     .header__figure,
     .header__figure>*,
@@ -175,11 +171,11 @@
       height: auto;
       max-width: 546px;
       width: 100%;
-  }
+    }
 
     .header__figure {
       margin: 80px auto 0 auto;
-  }
+    }
 
     .heading {
       font-size: var(--intersection);
@@ -189,17 +185,18 @@
       max-width: 734px;
       padding: 0 24px;
       text-align: center;
-  }
+    }
 
     .heading--alt {
       text-align: left;
-  }
-  .heading--alt+* {
-    margin-top: 60px;
-}
+    }
+
+    .heading--alt+* {
+      margin-top: 60px;
+    }
 
     @media only screen and (min-width: 768px) {
-      
+
       .header {
         align-items: center;
         grid-template-columns: auto auto;
@@ -207,64 +204,65 @@
         max-width: 1296px;
         padding: 100px 0;
         position: relative;
-    }
+      }
 
       .header__wrapper {
         max-width: 546px;
         padding: 0 24px;
-    }
+      }
 
       .header--center {
         grid-template-columns: auto;
-    }
+      }
 
       .header--center>*,
       .header--center>*>* {
         align-self: center;
         margin: auto;
         text-align: center;
-    }
+      }
 
       /* somewhat shameful */
       .header--center .header__wrapper {
         max-width: 100%;
-    }
+      }
 
       .header__title+.header__copy {
         margin-top: 32px;
-    }
+      }
 
       .header__title {
         max-width: 734px;
-    }
+      }
 
       .header__copy {
         max-width: 451px;
-    }
+      }
 
       .header__copy+.button {
         margin-top: 40px;
-    }
+      }
 
       .header__figure {
         margin: 0 auto;
-    }
+      }
 
       .heading {
         margin: 0 auto;
         max-width: 734px;
         padding: 0 24px;
         text-align: center;
-    }
+      }
+
       .heading--alt {
         max-width: 734px;
         text-align: center;
-    }
+      }
 
-    .heading--alt+* {
-    margin-top: 80px;
-}
-  }
+      .heading--alt+* {
+        margin-top: 80px;
+      }
+    }
 
     /** 
 * # link
@@ -273,11 +271,11 @@
     .link {
       color: var(--juniper-cyan);
       text-decoration: none;
-  }
+    }
 
     .link--inline {
       text-decoration: underline;
-  }
+    }
 
     .link--standalone::after,
     .summary__link::after {
@@ -292,18 +290,18 @@
       mask-position: center;
       mask-repeat: no-repeat;
       padding: 0 8px;
-  }
+    }
 
     .link--inherit {
       color: inherit;
-  }
+    }
 
     .link--standalone {
       color: inherit;
       letter-spacing: -0.5px;
       margin-top: 16px;
       text-decoration: underline;
-  }
+    }
 
     /* rererence: https://www.carbondesignsystem.com/components/link/usage/#standalone-link */
 
@@ -317,7 +315,7 @@
       right: 0;
       top: 0;
       z-index: 2;
-  }
+    }
 
 
     /** 
@@ -329,7 +327,7 @@
       cursor: pointer;
       display: inline-block;
       font-size: var(--button);
-  }
+    }
 
     .button {
       background-color: var(--juniper-cyan);
@@ -342,18 +340,18 @@
       padding: 13px 26.5px 15px 30.5px;
       text-align: center;
       text-decoration: none;
-      
+
       /*   adjust font Exo margin*/
-  }
+    }
 
     .button--card {
       padding: 8px 46px 10px 46px;
-  }
+    }
 
     .button--inverse {
       background-color: #ffffff;
       color: var(--dark);
-  }
+    }
 
     .button__append--download {
       -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M360 431.1H24c-13.25 0-24 10.76-24 24.02C0 469.2 10.75 480 24 480h336c13.25 0 24-10.76 24-24.02C384 442.7 373.3 431.1 360 431.1zM302.5 207.7L216 299.7v-243.6C216 42.76 205.3 32 192 32S168 42.76 168 56.02v243.6L81.47 207.7C76.75 202.6 70.38 200.1 64 200.1c-5.906 0-11.81 2.158-16.44 6.536c-9.656 9.069-10.12 24.27-1.031 33.93l128 136.1c9.062 9.694 25.88 9.694 34.94 0l128-136.1c9.094-9.663 8.625-24.86-1.031-33.93C326.8 197.5 311.6 197.1 302.5 207.7z'/%3E%3C/svg%3E");
@@ -368,20 +366,20 @@
       mask-repeat: no-repeat;
       padding: 0.1em 0.4em;
       vertical-align: middle;
-  }
+    }
 
     .button--prefooter {
       margin-top: 32px;
-  }
+    }
 
 
     /* iPad Mini in portrait & landscape */
     @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-      
+
       .button__append--download {
         padding: 0.11em 0.52em !important;
+      }
     }
-  }
 
     /** 
 * # embed block 
@@ -395,16 +393,16 @@
       padding: 0 24px;
       position: relative;
       width: 100%;
-  }
+    }
 
     .embed__item {
       border-radius: inherit;
       height: inherit;
       object-fit: cover;
       width: inherit;
-      
+
       /* manage poster video */
-  }
+    }
 
     .embed__cta {
       align-items: center;
@@ -418,20 +416,20 @@
       top: 0;
       width: 100%;
       z-index: 1;
-  }
+    }
 
     .embed__cta svg {
       cursor: pointer;
-  }
+    }
 
     @media only screen and (min-width: 768px) {
-      
+
       .embed {
         border-radius: calc(var(--golden-ratio) *3);
         height: 515px;
         max-width: 926px;
+      }
     }
-  }
 
     /** 
 * # card 
@@ -444,7 +442,7 @@
       place-items: flex-end;
       /* don't use grid because weird behavior on safari iPhone 13 and cease to respect margin in .card-group+.heading
 */
-  }
+    }
 
     .card-group {
       display: grid;
@@ -455,7 +453,7 @@
       max-width: fit-content;
       padding-left: 24px;
       padding-right: 24px;
-  }
+    }
 
     .card {
       aspect-ratio: 400/601;
@@ -466,29 +464,29 @@
       position: relative;
       text-align: center;
       width: 100%;
-      
+
       /*  legacy version */
       /* new DS */
-  }
+    }
 
     @supports not (aspect-ratio: 400/601) {
-      
+
       .card {
         min-height: 601px;
+      }
     }
-  }
 
     .card--inverse {
       background: var(--cosmos-blue);
-  }
+    }
 
     .card--inverse>* {
       color: var(--surely-white);
-  }
+    }
 
     .card--inverse .link {
       color: var(--juniper-cyan);
-  }
+    }
 
 
     .card__headline {
@@ -496,24 +494,24 @@
       font-weight: var(--semibold);
       letter-spacing: -1px;
       line-height: 30px;
-  }
+    }
 
     .card__headline--big {
       font-size: var(--big-text);
       letter-spacing: -1px;
       line-height: 42px;
-  }
+    }
 
     .card__copy {
       font-size: var(--small-text);
       font-weight: var(--semibold);
       letter-spacing: -.5px;
       line-height: 22px;
-  }
+    }
 
     .card__headline+.card__copy {
       margin-top: 16px;
-  }
+    }
 
     .card__header,
     .card__copy,
@@ -521,11 +519,11 @@
       font-weight: var(--semibold);
       position: relative;
       z-index: 1;
-  }
+    }
 
     .card__header+.card__body {
       margin-top: 32px;
-  }
+    }
 
     .card__figure {
       border-radius: inherit;
@@ -538,13 +536,13 @@
       top: 0;
       width: 100%;
       z-index: 0;
-  }
+    }
 
     .card__figure,
     .card__figure>*,
     .card__figure>*>* {
       border-radius: inherit;
-  }
+    }
 
     .card__figure img {
       display: block;
@@ -553,21 +551,21 @@
       object-position: center;
       position: relative;
       width: 100%;
-  }
+    }
 
     .card--prefooter {
       align-items: center;
       aspect-ratio: 366/350;
       display: grid;
       text-align: center;
-  }
+    }
 
     @supports not (aspect-ratio: 366/350) {
-      
+
       .card--prefooter {
         min-height: 350px;
+      }
     }
-  }
 
 
     .card__bullet {
@@ -575,7 +573,7 @@
       margin-bottom: 0;
       margin-top: 0;
       padding-left: 0;
-  }
+    }
 
     .card__bullet li {
       background: url("data:image/svg+xml,%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-56.000000, -2069.000000)'%3E%3Cg transform='translate(56.000000, 2069.000000)'%3E%3Crect fill='%23FFFFFF' x='0' y='0' width='18' height='18' rx='9'%3E%3C/rect%3E%3Cg transform='translate(4.800000, 6.000000)' fill='%2318214D'%3E%3Cpath d='M8.22420894,0.176072325 C8.45859702,0.410460405 8.45859702,0.789231542 8.22420894,1.02361962 L3.42394107,5.82388749 C3.18955299,6.05827557 2.81078185,6.05827557 2.57639377,5.82388749 L0.175734807,3.42375356 C-0.0585782689,3.18936548 -0.0585782689,2.81059434 0.175734807,2.57620626 C0.410085384,2.34181818 0.789981584,2.34181818 1.02436966,2.57620626 L2.98329148,4.55069144 L7.37666164,0.176072325 C7.61104972,-0.0586907752 7.98982086,-0.0586907752 8.22420894,0.176072325 L8.22420894,0.176072325 Z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -583,20 +581,20 @@
       background-repeat: no-repeat;
       margin-bottom: 2rem;
       padding-left: 26px;
-  }
+    }
 
     .card__bullet li:last-of-type {
       margin-bottom: 0;
-  }
+    }
 
     .card-group+.tile-group {
       margin-top: 24px;
-  }
+    }
 
     .card-group+.heading,
     .swiper+.heading {
       margin-top: 80px;
-  }
+    }
 
 
     /* card--reveal variant */
@@ -608,7 +606,7 @@
       overflow: hidden;
       padding: 0;
       /* prevent overflow on safari */
-  }
+    }
 
     .card--reveal .card__header {
       align-items: center;
@@ -619,9 +617,9 @@
       padding: 20px 30px 28px 32px;
       text-align: left;
       z-index: 2;
-      
+
       /* new DS */
-  }
+    }
 
     .card--reveal .card__body {
       -moz-transition: transform 1s ease;
@@ -637,21 +635,21 @@
       transform: translateY(100%);
       transition: transform 1s ease;
       z-index: 1;
-      
+
       /**/
-  }
+    }
 
     .card--reveal .card__header+.card__body {
       margin-top: 0;
-  }
+    }
 
     .card--reveal.is-open .card__body {
       transform: translateY(0);
-  }
+    }
 
     .toggle {
       cursor: pointer;
-  }
+    }
 
     .toggle svg {
       -moz-transition: transform 1s ease;
@@ -662,15 +660,15 @@
       height: 30px;
       transition: transform 1s ease;
       width: 30px;
-  }
+    }
 
     .card--reveal.is-open .toggle svg {
       transform: rotate(45deg);
-  }
+    }
 
 
     @media only screen and (min-width: 768px) {
-      
+
       .card--wide {
         aspect-ratio: 824/260;
         display: grid;
@@ -680,9 +678,9 @@
         max-width: 824px;
         min-height: 260px;
         width: 100%;
-        
+
         /*50% of wide card minus right padding plus half grid gutter*/
-    }
+      }
 
       .card--prefooter {
         aspect-ratio: 824/260;
@@ -693,28 +691,29 @@
         max-width: 824px;
         min-height: 260px;
         width: 100%;
-    }
+      }
+
       .card--wider {
         grid-template-columns: calc(60% - calc(40px + calc(24px / 2)));
-    }
+      }
 
       .card-group+.heading,
       .swiper+.heading {
         margin-top: 100px;
-    }
+      }
 
       .card-group {
         grid-template-columns: repeat(2, auto);
         padding: 0;
+      }
     }
-  }
 
     @supports not (aspect-ratio: 824/260) {
-      
+
       .card--wide {
         min-height: 260px;
+      }
     }
-  }
 
     /**
 * # slide block
@@ -729,48 +728,48 @@
       max-width: 279px;
       padding: 32px;
       position: relative;
-  }
+    }
 
     @supports not (aspect-ratio: 3/4) {
       slide:not(.slide--nav-item) {
         min-height: 413px;
+      }
+
     }
-      
-  }
 
     .slide--center {
       text-align: center;
-  }
+    }
 
     .slide--inverse {
       background: var(--cosmos-blue);
-  }
+    }
 
     .slide--inverse>* {
       color: var(--surely-white);
-  }
+    }
 
     .slide--small {
       border-radius: calc(var(--golden-ratio) *2);
       max-height: 250px;
       max-width: 187.5px;
-  }
+    }
 
     .slide__copy {
       font-size: var(--small-text);
       font-weight: var(--semibold);
       letter-spacing: -0.5px;
       line-height: 20px;
-  }
+    }
 
     .slide__title+.slide__copy {
       opacity: 0.7;
       padding-top: 1rem;
-  }
+    }
 
     .slide__header+.slide__body {
       margin-top: 24px;
-  }
+    }
 
     .slide__figure,
     .slide__figure>*,
@@ -778,40 +777,40 @@
       aspect-ratio: inherit;
       height: 100%;
       width: 100%;
-  }
+    }
 
     .slide__figure>*,
     .slide__figure>*>* {
       border-radius: inherit;
-  }
+    }
 
     .slide__header {
       position: relative;
       z-index: 1;
-  }
+    }
 
     .slide__title {
       font-size: var(--medium-text);
       font-weight: var(--semibold);
       letter-spacing: -1px;
       line-height: 26px;
-  }
+    }
 
     .slide__title--big {
       font-size: 30px;
       letter-spacing: -1.5px;
       line-height: 34px;
-  }
+    }
 
     .slide__title+.slide__subtitle {
       margin-top: 6px;
-  }
+    }
 
     .slide__subtitle {
       font-size: 12px;
       letter-spacing: -.5px;
       line-height: 14px;
-  }
+    }
 
     .slide__figure--stack {
       aspect-ratio: 216/161;
@@ -819,17 +818,17 @@
       height: auto;
       position: unset;
       width: 100%;
-  }
+    }
 
     .slide__figure--stack {
       margin: 24px auto;
-  }
+    }
 
     .slide__copy--small {
       font-size: 14px;
       letter-spacing: -.5px;
       line-height: 18px;
-  }
+    }
 
 
     @media only screen and (min-width: 768px) {
@@ -837,25 +836,26 @@
         font-size: 22px;
         letter-spacing: -1px;
         line-height: 26px;
-    }
+      }
+
       .slide {
         max-height: 412px;
         max-width: 309px;
-    }
+      }
 
       .slide--small {
         max-height: 400px;
         max-width: 300px;
-    }
+      }
 
-      
+
 
       .slide__title+.slide__copy {
         font-size: 18px;
         letter-spacing: -0.5px;
         line-height: 22px;
+      }
     }
-  }
 
     /**
 * # dialog
@@ -871,10 +871,10 @@
       touch-action: pinch-zoom;
       width: 100%;
       z-index: 99999;
-      
+
       /*   error on iPhone SE */
       /* Sit on top, higher than slide carousel and nav */
-  }
+    }
 
 
     .dialog-form {
@@ -887,15 +887,15 @@
       top: 0;
       width: 100%;
       z-index: 99999;
-      
+
       /* Sit on top, higher than slide carousel and nav */
-  }
+    }
 
 
     .show-dialog,
     .show-dialog-form {
       display: block;
-  }
+    }
 
     /* Dialog Content/Box */
     .dialog-content {
@@ -910,20 +910,20 @@
       margin: auto;
       padding: 0;
       position: relative;
-  }
+    }
 
 
     /* Add Animation */
     @keyframes animatetop {
-      
+
       from {
         opacity: 0
-    }
+      }
 
       to {
         opacity: 1
+      }
     }
-  }
 
     /* The Close Button */
     .close-dialog,
@@ -936,7 +936,7 @@
       right: 3%;
       top: 2%;
       z-index: 1;
-  }
+    }
 
     .close-dialog:hover,
     .close-dialog:focus,
@@ -945,7 +945,7 @@
       color: rgb(240, 233, 233);
       cursor: pointer;
       text-decoration: none;
-  }
+    }
 
     /** 
 * # tile block 
@@ -956,7 +956,7 @@
       margin-left: auto;
       margin-right: auto;
       padding: 0 24px;
-  }
+    }
 
     .tile {
       background-color: var(--cosmos-blue);
@@ -974,147 +974,149 @@
       place-content: center;
       text-align: center;
       width: 100%;
-  }
+    }
 
     .tile__value {
       color: var(--surely-white);
       font-size: var(--numbers);
       letter-spacing: -1.75px;
       line-height: 42px;
-  }
+    }
 
     .tile__label {
       color: var(--surely-white);
       font-size: var(--small-text);
       letter-spacing: -0.5px;
       line-height: 22px;
-  }
+    }
 
 
-/**
+    /**
 * # swiper
 */
 
-.swiper-group {
-    height: calc(267px + 80px);
-    /*399px is the height of the slide, 80px the space bottom*/
-    position: relative;
-    width: 100%;
-}
+    .swiper-group {
+      height: calc(267px + 80px);
+      /*399px is the height of the slide, 80px the space bottom*/
+      position: relative;
+      width: 100%;
+    }
 
-.swiper--togglable {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
+    .swiper--togglable {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
 
-/* hide all toggleable swipers except the first one */
-.swiper--togglable:not(:first-child) {
-    opacity: 0;
-    z-index: 0;
-}
+    /* hide all toggleable swipers except the first one */
+    .swiper--togglable:not(:first-child) {
+      opacity: 0;
+      z-index: 0;
+    }
 
-.slide--nav-item {
-    aspect-ratio: 0;
-    background: none;
-    border-bottom: 2px solid #BCBCBC;
-    border-radius: 0;
-    color: #BCBCBC;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 18px;
-    height: min-content;
-    letter-spacing: -.5px;
-    line-height: 22px;
-    padding: 0 32px 0 0;
-    width: auto;
-}
+    .slide--nav-item {
+      aspect-ratio: 0;
+      background: none;
+      border-bottom: 2px solid #BCBCBC;
+      border-radius: 0;
+      color: #BCBCBC;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 18px;
+      height: min-content;
+      letter-spacing: -.5px;
+      line-height: 22px;
+      padding: 0 32px 0 0;
+      width: auto;
+    }
 
-.slide--nav-item:last-of-type {
-    padding-right: 0;
-}
+    .slide--nav-item:last-of-type {
+      padding-right: 0;
+    }
 
-.slide--nav-item+.slide--nav-item {
-    margin: 0;
-}
+    .slide--nav-item+.slide--nav-item {
+      margin: 0;
+    }
 
-.swiper+.swiper-group {
-    margin-top: 40px;
-}
+    .swiper+.swiper-group {
+      margin-top: 40px;
+    }
 
-.current .slide__nav-label {
-    border-bottom: 3px solid var(--dark);
-    color: var(--dark);
-}
-
-
-/* override swiper.css for animate properly swiper--infinite */
-.swiper-wrapper {
-    -webkit-transition-timing-function: linear !important;
-    -o-transition-timing-function: linear !important;
-    transition-timing-function: linear !important;
-}
+    .current .slide__nav-label {
+      border-bottom: 3px solid var(--dark);
+      color: var(--dark);
+    }
 
 
-@media only screen and (min-width: 768px) {
-    .swiper {
+    /* override swiper.css for animate properly swiper--infinite */
+    .swiper-wrapper {
+      -webkit-transition-timing-function: linear !important;
+      -o-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+    }
+
+
+    @media only screen and (min-width: 768px) {
+      .swiper {
         margin-left: auto;
         margin-right: auto;
-    }
+      }
 
-    /* added by custom script */
-    .swiper-wrapper--center {
+      /* added by custom script */
+      .swiper-wrapper--center {
         justify-content: center;
-    }
+      }
 
-    .swiper-group {
+      .swiper-group {
         height: calc(399px + 100px);
         /*399px is the height of the slide, 100px the space bottom*/
+      }
     }
-}
 
 
-/** 
+    /** 
 * # mixed swiper
 **/
 
-.slide__grid-container {
-    margin: 60px 0;
-}
+    .slide__grid-container {
+      margin: 60px 0;
+    }
 
-.slide__grid {
-    margin-bottom: 60px;
-}
+    .slide__grid {
+      margin-bottom: 60px;
+    }
 
-@media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
 
-  .slide__grid-container {
-  max-width: 632px;
-    width: 100%;
-    margin: 60px auto;
-}
+      .slide__grid-container {
+        max-width: 632px;
+        width: 100%;
+        margin: 60px auto;
+      }
 
-.slide__grid {
-    display: grid;
-    gap: 32px;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 0;
-}
-}
+      .slide__grid {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 0;
+      }
+    }
 
-@media only screen and (min-width: 1066px){
-  .slide__grid-container {
-  max-width: 1018px;
-}
-.slide__grid {
-    grid-template-columns: 1fr 1fr 1fr;
-}
-}
-/** 
+    @media only screen and (min-width: 1066px) {
+      .slide__grid-container {
+        max-width: 1018px;
+      }
+
+      .slide__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    /** 
 * # accordion block 
 **/
 
@@ -1134,7 +1136,7 @@
       text-align: left;
       transition: 0.4s;
       width: 100%;
-  }
+    }
 
     .accordion__wrapper {
       border-bottom: 1px solid #d3d3d3;
@@ -1142,16 +1144,16 @@
       max-width: 926px;
       padding: 24px 0 31px;
       width: calc(100% - 5.8% * 2);
-  }
+    }
 
     .accordion__wrapper:last-child {
       border-bottom: none;
-  }
+    }
 
     .accordion__label {
       display: inline-block;
       width: calc(100% - 22px);
-  }
+    }
 
     .accordion__panel {
       color: var(--berry-blue);
@@ -1162,20 +1164,20 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out;
-  }
+    }
 
     .accordion__panel div {
       margin-bottom: 0;
       margin-top: 24px;
-  }
+    }
 
     .accordion__panel ul {
       padding-left: 0;
-  }
+    }
 
     .accordion__panel a {
       color: var(--juniper-cyan);
-  }
+    }
 
     .accordion:after {
       -ms-transition: -ms-transform .3s ease-in-out;
@@ -1188,24 +1190,24 @@
       transform: rotate(-180deg);
       transition: transform .3s ease-in-out;
       width: 22px;
-  }
+    }
 
     .accordion.active:after {
       content: '';
       display: inline-block;
       transform: rotate(0deg);
-  }
+    }
 
     @media only screen and (min-width: 768px) {
-      
+
       .accordion__label {
         font-size: var(--medium-text);
-    }
+      }
 
       .accordion__panel div {
         margin-top: 32px;
+      }
     }
-  }
 
     /* ONLY FOR DEMO */
 
@@ -1217,12 +1219,11 @@
       padding: 3px;
       position: absolute;
       top: 0;
-  }
+    }
 
     p.titling span {
       font-size: 18px;
-  }
-
+    }
   </style>
 </head>
 
@@ -1230,600 +1231,580 @@
   <main>
 
 
- <!-- # swiper normal / s -->
- <div class="stack stack--alt">
-  <div class="heading heading--alt">
-    Normal<br />
-- a standard Swiper -  </div>
-  <div class="swiper swiper--default">
-    <div class="slide-group">
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- # swiper normal / e -->
-
-
-
-
-<!-- # swiper infinite / s -->
-<div class="stack">
-  <div class="heading heading--alt">
-    Infinite<br />
-- a carousel Swiper -  </div>
-  <div class="swiper swiper--infinite">
-    <div class="slide-group">
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- # swiper infinite / e -->
-
-
-
-
-
-
-
-
-
-<!-- # swiper infinite with categories / s -->
-<div class="stack stack--alt">
-  <div class="heading heading--alt">
-    Infinite with nav<br />
-- a carousel with categories Swiper -  </div>
-  <!-- swiper / s -->
-  <div class="swiper swiper--nav">
-    <div class="slide-group">
-      <div class="slide slide--nav-item current" data-trigger="a">
-        <span class="slide__nav-label">Group A</span>
-      </div>
-      <div class="slide slide--nav-item" data-trigger="b">
-        <span class="slide__nav-label">Group B</span>
-      </div>
-      <div class="slide slide--nav-item" data-trigger="c">
-        <span class="slide__nav-label">Group C</span>
-      </div>
-      <div class="slide slide--nav-item" data-trigger="d">
-        <span class="slide__nav-label">Group D</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- # swiper-group / s -->
-
-  <div class="swiper-group">
-    <!-- # swiper--infinite a / s -->
-    <!-- swiper / s -->
-    <div class="swiper swiper--infinite swiper--togglable" data-target="a">
-      <div class="slide-group">
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group A</div>
-            <div class="slide__copy">
-              Slide__copy here
+    <!-- # swiper normal / s -->
+    <div class="stack stack--alt">
+      <div class="heading heading--alt">
+        Normal<br />
+        - a standard Swiper - </div>
+      <div class="swiper swiper--default">
+        <div class="slide-group">
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group A</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group A</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group A</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group A</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group A</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group A</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group A</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- swiper / e -->
-    <!-- # swiper--infinite a / e -->
+    <!-- # swiper normal / e -->
 
-    <!-- # swiper--infinite b / s -->
-    <!-- swiper / s -->
-    <div class="swiper swiper--infinite swiper--togglable" data-target="b">
-      <div class="slide-group">
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group B</div>
-            <div class="slide__copy">
-              Slide__copy here
+
+
+
+    <!-- # swiper infinite / s -->
+    <div class="stack">
+      <div class="heading heading--alt">
+        Infinite<br />
+        - a carousel Swiper - </div>
+      <div class="swiper swiper--infinite">
+        <div class="slide-group">
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group B</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group B</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group B</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group B</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group B</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group B</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group B</div>
-            <div class="slide__copy">
-              Slide__copy here
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
+            </div>
+          </div>
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
+            </div>
+          </div>
+          <div class="slide slide--light slide--center slide--inverse">
+            <div class="slide__header">
+              <div class="slide__title">Slide<br />title</div>
+              <div class="slide__copy">
+                Slide__copy here
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- swiper / e -->
-    <!-- # swiper--infinite b / e -->
+    <!-- # swiper infinite / e -->
 
-    <!-- # swiper--infinite c / s -->
-    <!-- swiper / s -->
-    <div class="swiper swiper--infinite swiper--togglable" data-target="c">
-      <div class="slide-group">
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group C</div>
-            <div class="slide__copy">
-              Slide__copy here
+
+
+
+
+
+
+
+
+    <!-- # swiper infinite with categories / s -->
+    <div class="stack stack--alt">
+      <div class="heading heading--alt">
+        Infinite with nav<br />
+        - a carousel with categories Swiper - </div>
+      <!-- swiper / s -->
+      <div class="swiper swiper--nav">
+        <div class="slide-group">
+          <div class="slide slide--nav-item current" data-trigger="a">
+            <span class="slide__nav-label">Group A</span>
+          </div>
+          <div class="slide slide--nav-item" data-trigger="b">
+            <span class="slide__nav-label">Group B</span>
+          </div>
+          <div class="slide slide--nav-item" data-trigger="c">
+            <span class="slide__nav-label">Group C</span>
+          </div>
+          <div class="slide slide--nav-item" data-trigger="d">
+            <span class="slide__nav-label">Group D</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- # swiper-group / s -->
+
+      <div class="swiper-group">
+        <!-- # swiper--infinite a / s -->
+        <!-- swiper / s -->
+        <div class="swiper swiper--infinite swiper--togglable" data-target="a">
+          <div class="slide-group">
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group A</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group A</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group A</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group A</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group A</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group A</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group A</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group A</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group C</div>
-            <div class="slide__copy">
-              Slide__copy here
+        <!-- swiper / e -->
+        <!-- # swiper--infinite a / e -->
+
+        <!-- # swiper--infinite b / s -->
+        <!-- swiper / s -->
+        <div class="swiper swiper--infinite swiper--togglable" data-target="b">
+          <div class="slide-group">
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group B</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group B</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group B</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group B</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group B</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group B</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group B</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group B</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group C</div>
-            <div class="slide__copy">
-              Slide__copy here
+        <!-- swiper / e -->
+        <!-- # swiper--infinite b / e -->
+
+        <!-- # swiper--infinite c / s -->
+        <!-- swiper / s -->
+        <div class="swiper swiper--infinite swiper--togglable" data-target="c">
+          <div class="slide-group">
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group C</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group C</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group C</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group C</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group C</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group C</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group C</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group C</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group C</div>
-            <div class="slide__copy">
-              Slide__copy here
+        <!-- swiper / e -->
+        <!-- # swiper--infinite c / e -->
+
+        <!-- # swiper--infinite d / s -->
+        <!-- swiper / s -->
+        <div class="swiper swiper--infinite swiper--togglable" data-target="d">
+          <div class="slide-group">
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group D</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group D</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group D</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group D</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group D</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group D</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group D</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />group D</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group C</div>
-            <div class="slide__copy">
-              Slide__copy here
+        <!-- swiper / e -->
+        <!-- # swiper--infinite d / e -->
+      </div>
+      <!-- # swiper-group -->
+    </div>
+    <!-- # swiper infinite with categories / e -->
+
+
+
+
+    <!-- # swiper mixed / s -->
+    <div class="stack">
+      <div class="heading heading--alt">
+        Mixed<br />
+        - Desktop grid, Carousel mobile - </div>
+
+      <div class="slide__grid-container">
+        <div class="swiper swiper--mixed">
+          <div class="slide-group slide__grid">
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />title</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group C</div>
-            <div class="slide__copy">
-              Slide__copy here
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />title</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group C</div>
-            <div class="slide__copy">
-              Slide__copy here
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />title</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group C</div>
-            <div class="slide__copy">
-              Slide__copy here
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />title</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />title</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
+            </div>
+            <div class="slide slide--light slide--center slide--inverse">
+              <div class="slide__header">
+                <div class="slide__title">Slide<br />title</div>
+                <div class="slide__copy">
+                  Slide__copy here
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- swiper / e -->
-    <!-- # swiper--infinite c / e -->
-
-    <!-- # swiper--infinite d / s -->
-    <!-- swiper / s -->
-    <div class="swiper swiper--infinite swiper--togglable" data-target="d">
-      <div class="slide-group">
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group D</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group D</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group D</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group D</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group D</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group D</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group D</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-        <div class="slide slide--light slide--center slide--inverse">
-          <div class="slide__header">
-            <div class="slide__title">Slide<br />group D</div>
-            <div class="slide__copy">
-              Slide__copy here
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- swiper / e -->
-    <!-- # swiper--infinite d / e -->
-  </div>
-  <!-- # swiper-group -->
-</div>
-<!-- # swiper infinite with categories / e -->
-
-
-
-
- <!-- # swiper normal / s -->
- <div class="stack">
-  <div class="heading heading--alt">
-    Mixed<br />
-- Desktop grid, Carousel mobile -  </div>
-
-<div class="slide__grid-container">
-  <div class="swiper swiper--mixed">
-    <div class="slide-group slide__grid">
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-      <div class="slide slide--light slide--center slide--inverse">
-        <div class="slide__header">
-          <div class="slide__title">Slide<br />title</div>
-          <div class="slide__copy">
-            Slide__copy here
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- </div>
-<!-- # swiper normal / e -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- # swiper mixed  / e -->
   </main>
-
-
 </body>
-
-   <!-- Swiper https://swiperjs.com/ -->
-   <script
-   
-   src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<!-- Swiper https://swiperjs.com/ -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 
 
-  <script>
+<script>
 
-// # all swiper
-const sliderCheck = document.querySelector(".swiper") !== null;
-if (sliderCheck) {
-  const sliders = document.querySelectorAll(".swiper");
-  for (let slider of sliders) {
-    const groupSlides = slider.querySelectorAll(".slide-group");
-    for (let groupSlide of groupSlides) {
-      groupSlide.classList.add("swiper-wrapper");
-      const slides = groupSlide.querySelectorAll(".slide");
-      for (let slide of slides) {
-        slide.classList.add("swiper-slide");
+  // # all swiper
+  const sliderCheck = document.querySelector(".swiper") !== null;
+  if (sliderCheck) {
+    const sliders = document.querySelectorAll(".swiper");
+    for (let slider of sliders) {
+      const groupSlides = slider.querySelectorAll(".slide-group");
+      for (let groupSlide of groupSlides) {
+        groupSlide.classList.add("swiper-wrapper");
+        const slides = groupSlide.querySelectorAll(".slide");
+        for (let slide of slides) {
+          slide.classList.add("swiper-slide");
+        }
       }
     }
   }
-}
 
   // # swiper default
   let swiperDefault = new Swiper(".swiper--default", {
@@ -1931,49 +1912,50 @@ if (sliderCheck) {
   // # mixed swiper
 
 
-// breakpoint where swiper will be destroyed
-// and switches to a dual-column layout
-const breakpoint = window.matchMedia("(min-width: 768px)");
-// keep track of swiper instances to destroy later
-let swiperMixed;
+  // breakpoint where swiper will be destroyed
+  // and switches to a dual-column layout
+  const breakpoint = window.matchMedia("(min-width: 768px)");
+  // keep track of swiper instances to destroy later
+  let swiperMixed;
 
-const breakpointChecker = function () {
-  // if larger viewport and multi-row layout needed
-  if (breakpoint.matches === true && swiperMixed !== undefined) {
-    // clean up old instances and inline styles when available
-    swiperMixed.destroy(true, true);
-    // else if a small viewport and single column layout needed
-  } else if (breakpoint.matches === false) {
-    // fire small viewport version of swiper
-    enableSwiper();
-  }
-};
+  const breakpointChecker = function () {
+    // if larger viewport and multi-row layout needed
+    if (breakpoint.matches === true && swiperMixed !== undefined) {
+      // clean up old instances and inline styles when available
+      swiperMixed.destroy(true, true);
+      // else if a small viewport and single column layout needed
+    } else if (breakpoint.matches === false) {
+      // fire small viewport version of swiper
+      enableSwiper();
+    }
+  };
 
-const enableSwiper = function () {
-  // # swiper default
-  swiperMixed = new Swiper(".swiper--mixed", {
-    slidesOffsetAfter: 24,
-    slidesOffsetBefore: 24,
-    slidesPerView: "auto",
-    spaceBetween: 24,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-};
+  const enableSwiper = function () {
+    // # swiper default
+    swiperMixed = new Swiper(".swiper--mixed", {
+      slidesOffsetAfter: 24,
+      slidesOffsetBefore: 24,
+      slidesPerView: "auto",
+      spaceBetween: 24,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  };
 
-// keep an eye on viewport size changes
-breakpoint.addListener(breakpointChecker);
-// kickstart
+  // keep an eye on viewport size changes
+  breakpoint.addListener(breakpointChecker);
+  // kickstart
 
-breakpointChecker();
+  breakpointChecker();
 
 
 
-  </script>
+</script>
+
 </html>
