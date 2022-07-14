@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Design System - Swipers</title>
+
+   <!-- Swiper https://swiperjs.com/ -->
+   <link
+   rel="stylesheet"
+   href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+   media="all"
+ />
+  <style>
+    /*
+* Font Face Styles
+* 
+* This is where you can add your own font face styles.
+* Resources: https://google-webfonts-helper.herokuapp.com/fonts/exo-2?subsets=latin
+*
+/* exo-2-regular - latin */
+    @font-face {
+      font-display: swap;
+      font-family: "Exo 2";
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 400;
+      src: url("../assets/fonts/exo-2-v19-latin-regular.woff2") format("woff");
+    }
+
+    /* exo-2-600 - latin */
+    @font-face {
+      font-display: swap;
+      font-family: "Exo 2";
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 600;
+      src: url("../assets/fonts/exo-2-v19-latin-600.woff2") format("woff2");
+    }
+  </style>
+
+  <link rel="preload" href="../assets/fonts/exo-2-v19-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/exo-2-v19-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+
+  <style>
+    :root {
+      /* accent colors */
+      --juniper-cyan: #309BDA;
+      --berry-blue: #3E4462;
+      --cosmos-blue: #09091E;
+
+      /* flavoring colors */
+      --juniper-cyan: #309BDA;
+      --berry-blue: #3E4462;
+      --bean-green: #7EC152;
+      --chilly-yellow: #EAAF3E;
+      --pepper-red: #EA4753;
+      --iron-grey: #EFF3F7;
+
+      /* background colors */
+      --surely-white: #fff;
+      --iron-grey: #EFF3F7;
+
+      /* spacing */
+      --golden-ratio: 8px;
+
+
+      /* big text */
+      --big-text: 40px;
+
+      /* medium text */
+      --medium-text: 28px;
+
+      /* header font */
+      --header: 20px;
+      --title: 44px;
+
+      /* intersection */
+      --carousel-intersection: 32px;
+      --intersection: 36px;
+
+      /* numbers */
+      --numbers: 70px;
+
+      /* buttons */
+
+      --button: 18px;
+
+      /* small-text */
+      --small-text: 18px;
+
+      /* menu voice */
+      --menu-voice: 14px;
+
+      /* font weight */
+      --semibold: 600;
+      --medium: 500;
+      --regular: 400;
+
+
+      --accent: var(--juniper-cyan);
+    }
+
+    * {
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+      font-family: "Exo 2", sans-serif;
+  }
+
+    body {
+      margin: 0;
+  }
+
+    img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+    /** 
+* # stack 
+**/
+
+    .stack {
+      background-color: var(--surely-white);
+      padding: 80px 0;
+      position: relative;
+  }
+
+    .stack--alt {
+      background-color: var(--iron-grey);
+  }
+
+    /** 
+* # header 
+**/
+    .header {
+      display: grid;
+      padding: 80px 0;
+  }
+
+    .header__wrapper {
+      padding: 0 24px;
+  }
+
+    .header__title {
+      color: var(--cosmos-blue);
+      font-size: var(--title);
+      font-weight: var(--semibold);
+      letter-spacing: -2px;
+      line-height: 44px;
+      margin: 0;
+  }
+
+    .header__copy {
+      color: var(--cosmos-blue);
+      font-size: var(--small-text);
+      font-weight: var(--regular);
+      letter-spacing: -0.3px;
+      line-height: 26px;
+  }
+
+    .header__title+.header__copy {
+      margin-top: 24px;
+  }
+
+    .header__copy+.button {
+      margin: 32px auto 0 auto;
+  }
+
+    .header__figure,
+    .header__figure>*,
+    .header__figure>*>* {
+      height: auto;
+      max-width: 546px;
+      width: 100%;
+  }
+
+    .header__figure {
+      margin: 80px auto 0 auto;
+  }
+
+    .heading {
+      font-size: var(--intersection);
+      font-weight: var(--semibold);
+      letter-spacing: -1.5px;
+      line-height: 34px;
+      max-width: 734px;
+      padding: 0 24px;
+      text-align: center;
+  }
+
+    .heading--alt {
+      text-align: left;
+  }
+  .heading--alt+* {
+    margin-top: 60px;
+}
+
+    @media only screen and (min-width: 768px) {
+      
+      .header {
+        align-items: center;
+        grid-template-columns: auto auto;
+        margin: 0 auto;
+        max-width: 1296px;
+        padding: 100px 0;
+        position: relative;
+    }
+
+      .header__wrapper {
+        max-width: 546px;
+        padding: 0 24px;
+    }
+
+      .header--center {
+        grid-template-columns: auto;
+    }
+
+      .header--center>*,
+      .header--center>*>* {
+        align-self: center;
+        margin: auto;
+        text-align: center;
+    }
+
+      /* somewhat shameful */
+      .header--center .header__wrapper {
+        max-width: 100%;
+    }
+
+      .header__title+.header__copy {
+        margin-top: 32px;
+    }
+
+      .header__title {
+        max-width: 734px;
+    }
+
+      .header__copy {
+        max-width: 451px;
+    }
+
+      .header__copy+.button {
+        margin-top: 40px;
+    }
+
+      .header__figure {
+        margin: 0 auto;
+    }
+
+      .heading {
+        margin: 0 auto;
+        max-width: 734px;
+        padding: 0 24px;
+        text-align: center;
+    }
+      .heading--alt {
+        max-width: 734px;
+        text-align: center;
+    }
+
+    .heading--alt+* {
+    margin-top: 80px;
+}
+  }
+
+    /** 
+* # link
+**/
+
+    .link {
+      color: var(--juniper-cyan);
+      text-decoration: none;
+  }
+
+    .link--inline {
+      text-decoration: underline;
+  }
+
+    .link--standalone::after,
+    .summary__link::after {
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='17px' height='21px' viewBox='0 0 17 6' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-814.000000, -2515.000000)' fill='%23309BDA' fill-rule='nonzero'%3E%3Cpath d='M830.68842,2520.70676 L826.438285,2524.70701 C826.022901,2525.09797 825.350516,2525.09735 824.935796,2524.70701 C824.520744,2524.31636 824.520744,2523.68351 824.935796,2523.29286 L827.374643,2521.00053 L815.062534,2521.00053 C814.475152,2521.00053 814,2520.55363 814,2519.97234 C814,2519.39106 814.475152,2519.00041 815.062534,2519.00041 L827.374643,2519.00041 L824.93812,2516.70714 C824.523068,2516.31649 824.523068,2515.68364 824.93812,2515.29299 C825.353172,2514.90234 826.025557,2514.90234 826.440609,2515.29299 L830.690744,2519.29324 C831.103472,2519.68482 831.103472,2520.31611 830.68842,2520.70676 Z' id='Path-Copy-6'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      background-color: currentColor;
+      clip-path: padding-box inset(6px 0);
+      content: '';
+      margin-left: 8px;
+      mask-image: url("data:image/svg+xml,%3Csvg width='17px' height='10px' viewBox='0 0 17 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-814.000000, -2515.000000)' fill='%23309BDA' fill-rule='nonzero'%3E%3Cpath d='M830.68842,2520.70676 L826.438285,2524.70701 C826.022901,2525.09797 825.350516,2525.09735 824.935796,2524.70701 C824.520744,2524.31636 824.520744,2523.68351 824.935796,2523.29286 L827.374643,2521.00053 L815.062534,2521.00053 C814.475152,2521.00053 814,2520.55363 814,2519.97234 C814,2519.39106 814.475152,2519.00041 815.062534,2519.00041 L827.374643,2519.00041 L824.93812,2516.70714 C824.523068,2516.31649 824.523068,2515.68364 824.93812,2515.29299 C825.353172,2514.90234 826.025557,2514.90234 826.440609,2515.29299 L830.690744,2519.29324 C831.103472,2519.68482 831.103472,2520.31611 830.68842,2520.70676 Z' id='Path-Copy-6'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      padding: 0 8px;
+  }
+
+    .link--inherit {
+      color: inherit;
+  }
+
+    .link--standalone {
+      color: inherit;
+      letter-spacing: -0.5px;
+      margin-top: 16px;
+      text-decoration: underline;
+  }
+
+    /* rererence: https://www.carbondesignsystem.com/components/link/usage/#standalone-link */
+
+    .link--stretched::after {
+      background-color: rgba(0, 0, 0, 0);
+      bottom: 0;
+      content: '';
+      left: 0;
+      pointer-events: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+  }
+
+
+    /** 
+* # button
+**/
+
+    .button,
+    .link {
+      cursor: pointer;
+      display: inline-block;
+      font-size: var(--button);
+  }
+
+    .button {
+      background-color: var(--juniper-cyan);
+      border-radius: var(--golden-ratio);
+      color: #ffffff;
+      font-weight: var(--semibold);
+      margin-top: 24px;
+      min-width: 142px;
+      padding: 12px 26.5px 16px 30.5px;
+      padding: 13px 26.5px 15px 30.5px;
+      text-align: center;
+      text-decoration: none;
+      
+      /*   adjust font Exo margin*/
+  }
+
+    .button--card {
+      padding: 8px 46px 10px 46px;
+  }
+
+    .button--inverse {
+      background-color: #ffffff;
+      color: var(--dark);
+  }
+
+    .button__append--download {
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M360 431.1H24c-13.25 0-24 10.76-24 24.02C0 469.2 10.75 480 24 480h336c13.25 0 24-10.76 24-24.02C384 442.7 373.3 431.1 360 431.1zM302.5 207.7L216 299.7v-243.6C216 42.76 205.3 32 192 32S168 42.76 168 56.02v243.6L81.47 207.7C76.75 202.6 70.38 200.1 64 200.1c-5.906 0-11.81 2.158-16.44 6.536c-9.656 9.069-10.12 24.27-1.031 33.93l128 136.1c9.062 9.694 25.88 9.694 34.94 0l128-136.1c9.094-9.663 8.625-24.86-1.031-33.93C326.8 197.5 311.6 197.1 302.5 207.7z'/%3E%3C/svg%3E");
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      background-color: currentColor;
+      clip-path: padding-box inset(0.25em 0);
+      content: '';
+      margin-left: 10.5px;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M360 431.1H24c-13.25 0-24 10.76-24 24.02C0 469.2 10.75 480 24 480h336c13.25 0 24-10.76 24-24.02C384 442.7 373.3 431.1 360 431.1zM302.5 207.7L216 299.7v-243.6C216 42.76 205.3 32 192 32S168 42.76 168 56.02v243.6L81.47 207.7C76.75 202.6 70.38 200.1 64 200.1c-5.906 0-11.81 2.158-16.44 6.536c-9.656 9.069-10.12 24.27-1.031 33.93l128 136.1c9.062 9.694 25.88 9.694 34.94 0l128-136.1c9.094-9.663 8.625-24.86-1.031-33.93C326.8 197.5 311.6 197.1 302.5 207.7z'/%3E%3C/svg%3E");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      padding: 0.1em 0.4em;
+      vertical-align: middle;
+  }
+
+    .button--prefooter {
+      margin-top: 32px;
+  }
+
+
+    /* iPad Mini in portrait & landscape */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+      
+      .button__append--download {
+        padding: 0.11em 0.52em !important;
+    }
+  }
+
+    /** 
+* # embed block 
+**/
+
+    .embed {
+      border-radius: calc(var(--golden-ratio) *2);
+      height: 488px;
+      margin: 0 auto;
+      max-width: 366px;
+      padding: 0 24px;
+      position: relative;
+      width: 100%;
+  }
+
+    .embed__item {
+      border-radius: inherit;
+      height: inherit;
+      object-fit: cover;
+      width: inherit;
+      
+      /* manage poster video */
+  }
+
+    .embed__cta {
+      align-items: center;
+      bottom: 0;
+      display: grid;
+      height: 100%;
+      justify-items: center;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+  }
+
+    .embed__cta svg {
+      cursor: pointer;
+  }
+
+    @media only screen and (min-width: 768px) {
+      
+      .embed {
+        border-radius: calc(var(--golden-ratio) *3);
+        height: 515px;
+        max-width: 926px;
+    }
+  }
+
+    /** 
+* # card 
+**/
+
+    .card--upside {
+      align-items: end;
+      display: flex;
+      display: grid;
+      place-items: flex-end;
+      /* don't use grid because weird behavior on safari iPhone 13 and cease to respect margin in .card-group+.heading
+*/
+  }
+
+    .card-group {
+      display: grid;
+      grid-gap: 24px;
+      grid-template-columns: auto;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: fit-content;
+      padding-left: 24px;
+      padding-right: 24px;
+  }
+
+    .card {
+      aspect-ratio: 400/601;
+      border-radius: calc(var(--golden-ratio) *2);
+      max-width: 400px;
+      padding-right: 64px;
+      padding: 40px 32px;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      
+      /*  legacy version */
+      /* new DS */
+  }
+
+    @supports not (aspect-ratio: 400/601) {
+      
+      .card {
+        min-height: 601px;
+    }
+  }
+
+    .card--inverse {
+      background: var(--cosmos-blue);
+  }
+
+    .card--inverse>* {
+      color: var(--surely-white);
+  }
+
+    .card--inverse .link {
+      color: var(--juniper-cyan);
+  }
+
+
+    .card__headline {
+      font-size: var(--medium-text);
+      font-weight: var(--semibold);
+      letter-spacing: -1px;
+      line-height: 30px;
+  }
+
+    .card__headline--big {
+      font-size: var(--big-text);
+      letter-spacing: -1px;
+      line-height: 42px;
+  }
+
+    .card__copy {
+      font-size: var(--small-text);
+      font-weight: var(--semibold);
+      letter-spacing: -.5px;
+      line-height: 22px;
+  }
+
+    .card__headline+.card__copy {
+      margin-top: 16px;
+  }
+
+    .card__header,
+    .card__copy,
+    .card__cta {
+      font-weight: var(--semibold);
+      position: relative;
+      z-index: 1;
+  }
+
+    .card__header+.card__body {
+      margin-top: 32px;
+  }
+
+    .card__figure {
+      border-radius: inherit;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+  }
+
+    .card__figure,
+    .card__figure>*,
+    .card__figure>*>* {
+      border-radius: inherit;
+  }
+
+    .card__figure img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+      width: 100%;
+  }
+
+    .card--prefooter {
+      align-items: center;
+      aspect-ratio: 366/350;
+      display: grid;
+      text-align: center;
+  }
+
+    @supports not (aspect-ratio: 366/350) {
+      
+      .card--prefooter {
+        min-height: 350px;
+    }
+  }
+
+
+    .card__bullet {
+      list-style-type: none;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-left: 0;
+  }
+
+    .card__bullet li {
+      background: url("data:image/svg+xml,%3Csvg width='18px' height='18px' viewBox='0 0 18 18' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-56.000000, -2069.000000)'%3E%3Cg transform='translate(56.000000, 2069.000000)'%3E%3Crect fill='%23FFFFFF' x='0' y='0' width='18' height='18' rx='9'%3E%3C/rect%3E%3Cg transform='translate(4.800000, 6.000000)' fill='%2318214D'%3E%3Cpath d='M8.22420894,0.176072325 C8.45859702,0.410460405 8.45859702,0.789231542 8.22420894,1.02361962 L3.42394107,5.82388749 C3.18955299,6.05827557 2.81078185,6.05827557 2.57639377,5.82388749 L0.175734807,3.42375356 C-0.0585782689,3.18936548 -0.0585782689,2.81059434 0.175734807,2.57620626 C0.410085384,2.34181818 0.789981584,2.34181818 1.02436966,2.57620626 L2.98329148,4.55069144 L7.37666164,0.176072325 C7.61104972,-0.0586907752 7.98982086,-0.0586907752 8.22420894,0.176072325 L8.22420894,0.176072325 Z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-position-y: 3px;
+      background-repeat: no-repeat;
+      margin-bottom: 2rem;
+      padding-left: 26px;
+  }
+
+    .card__bullet li:last-of-type {
+      margin-bottom: 0;
+  }
+
+    .card-group+.tile-group {
+      margin-top: 24px;
+  }
+
+    .card-group+.heading,
+    .swiper+.heading {
+      margin-top: 80px;
+  }
+
+
+    /* card--reveal variant */
+    .card--reveal {
+      -webkit-clip-path: content-box;
+      clip-path: content-box;
+      display: grid;
+      grid-template-rows: auto min-content;
+      overflow: hidden;
+      padding: 0;
+      /* prevent overflow on safari */
+  }
+
+    .card--reveal .card__header {
+      align-items: center;
+      background-color: inherit;
+      display: grid;
+      grid-template-columns: auto min-content;
+      order: 2;
+      padding: 20px 30px 28px 32px;
+      text-align: left;
+      z-index: 2;
+      
+      /* new DS */
+  }
+
+    .card--reveal .card__body {
+      -moz-transition: transform 1s ease;
+      -ms-transition: transform 1s ease;
+      -o-transition: transform 1s ease;
+      -webkit-transition: transform 1s ease;
+      align-self: end;
+      background-color: inherit;
+      border-radius: 16px 16px 0 0;
+      height: 100%;
+      order: 1;
+      padding: 40px 32px;
+      transform: translateY(100%);
+      transition: transform 1s ease;
+      z-index: 1;
+      
+      /**/
+  }
+
+    .card--reveal .card__header+.card__body {
+      margin-top: 0;
+  }
+
+    .card--reveal.is-open .card__body {
+      transform: translateY(0);
+  }
+
+    .toggle {
+      cursor: pointer;
+  }
+
+    .toggle svg {
+      -moz-transition: transform 1s ease;
+      -ms-transition: transform 1s ease;
+      -o-transition: transform 1s ease;
+      -webkit-transition: transform 1s ease;
+      fill: var(--surely-white);
+      height: 30px;
+      transition: transform 1s ease;
+      width: 30px;
+  }
+
+    .card--reveal.is-open .toggle svg {
+      transform: rotate(45deg);
+  }
+
+
+    @media only screen and (min-width: 768px) {
+      
+      .card--wide {
+        aspect-ratio: 824/260;
+        display: grid;
+        grid-column: span 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content;
+        max-width: 824px;
+        min-height: 260px;
+        width: 100%;
+        
+        /*50% of wide card minus right padding plus half grid gutter*/
+    }
+
+      .card--prefooter {
+        aspect-ratio: 824/260;
+        display: grid;
+        grid-column: span 2;
+        grid-template-columns: 1fr;
+        margin-left: auto;
+        max-width: 824px;
+        min-height: 260px;
+        width: 100%;
+    }
+      .card--wider {
+        grid-template-columns: calc(60% - calc(40px + calc(24px / 2)));
+    }
+
+      .card-group+.heading,
+      .swiper+.heading {
+        margin-top: 100px;
+    }
+
+      .card-group {
+        grid-template-columns: repeat(2, auto);
+        padding: 0;
+    }
+  }
+
+    @supports not (aspect-ratio: 824/260) {
+      
+      .card--wide {
+        min-height: 260px;
+    }
+  }
+
+    /**
+* # slide block
+**/
+
+    .slide {
+      aspect-ratio: 3/4;
+      background-color: var(--surely-white);
+      border-radius: calc(var(--golden-ratio) *3);
+      height: 100%;
+      max-height: 372px;
+      max-width: 279px;
+      padding: 32px;
+      position: relative;
+  }
+
+    @supports not (aspect-ratio: 3/4) {
+      slide:not(.slide--nav-item) {
+        min-height: 413px;
+    }
+      
+  }
+
+    .slide--center {
+      text-align: center;
+  }
+
+    .slide--inverse {
+      background: var(--cosmos-blue);
+  }
+
+    .slide--inverse>* {
+      color: var(--surely-white);
+  }
+
+    .slide--small {
+      border-radius: calc(var(--golden-ratio) *2);
+      max-height: 250px;
+      max-width: 187.5px;
+  }
+
+    .slide__copy {
+      font-size: var(--small-text);
+      font-weight: var(--semibold);
+      letter-spacing: -0.5px;
+      line-height: 20px;
+  }
+
+    .slide__title+.slide__copy {
+      opacity: 0.7;
+      padding-top: 1rem;
+  }
+
+    .slide__header+.slide__body {
+      margin-top: 24px;
+  }
+
+    .slide__figure,
+    .slide__figure>*,
+    .slide__figure>*>* {
+      aspect-ratio: inherit;
+      height: 100%;
+      width: 100%;
+  }
+
+    .slide__figure>*,
+    .slide__figure>*>* {
+      border-radius: inherit;
+  }
+
+    .slide__header {
+      position: relative;
+      z-index: 1;
+  }
+
+    .slide__title {
+      font-size: var(--medium-text);
+      font-weight: var(--semibold);
+      letter-spacing: -1px;
+      line-height: 26px;
+  }
+
+    .slide__title--big {
+      font-size: 30px;
+      letter-spacing: -1.5px;
+      line-height: 34px;
+  }
+
+    .slide__title+.slide__subtitle {
+      margin-top: 6px;
+  }
+
+    .slide__subtitle {
+      font-size: 12px;
+      letter-spacing: -.5px;
+      line-height: 14px;
+  }
+
+    .slide__figure--stack {
+      aspect-ratio: 216/161;
+      border-radius: 14px;
+      height: auto;
+      position: unset;
+      width: 100%;
+  }
+
+    .slide__figure--stack {
+      margin: 24px auto;
+  }
+
+    .slide__copy--small {
+      font-size: 14px;
+      letter-spacing: -.5px;
+      line-height: 18px;
+  }
+
+
+    @media only screen and (min-width: 768px) {
+      slide__copy:not(.slide__copy--small) {
+        font-size: 22px;
+        letter-spacing: -1px;
+        line-height: 26px;
+    }
+      .slide {
+        max-height: 412px;
+        max-width: 309px;
+    }
+
+      .slide--small {
+        max-height: 400px;
+        max-width: 300px;
+    }
+
+      
+
+      .slide__title+.slide__copy {
+        font-size: 18px;
+        letter-spacing: -0.5px;
+        line-height: 22px;
+    }
+  }
+
+    /**
+* # dialog
+*/
+    .dialog {
+      background: linear-gradient(rgba(30, 30, 30, .9), #000 1810%);
+      display: none;
+      height: 100%;
+      left: 0;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      touch-action: pinch-zoom;
+      width: 100%;
+      z-index: 99999;
+      
+      /*   error on iPhone SE */
+      /* Sit on top, higher than slide carousel and nav */
+  }
+
+
+    .dialog-form {
+      background: linear-gradient(rgba(30, 30, 30, .9), #000 1810%);
+      display: none;
+      height: 100%;
+      left: 0;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 99999;
+      
+      /* Sit on top, higher than slide carousel and nav */
+  }
+
+
+    .show-dialog,
+    .show-dialog-form {
+      display: block;
+  }
+
+    /* Dialog Content/Box */
+    .dialog-content {
+      align-items: center;
+      animation-duration: 0.4s;
+      animation-name: animatetop;
+      box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      justify-content: center;
+      margin: auto;
+      padding: 0;
+      position: relative;
+  }
+
+
+    /* Add Animation */
+    @keyframes animatetop {
+      
+      from {
+        opacity: 0
+    }
+
+      to {
+        opacity: 1
+    }
+  }
+
+    /* The Close Button */
+    .close-dialog,
+    .close-dialog-form {
+      color: #fff;
+      float: right;
+      font-size: 55px;
+      font-weight: 200;
+      position: absolute;
+      right: 3%;
+      top: 2%;
+      z-index: 1;
+  }
+
+    .close-dialog:hover,
+    .close-dialog:focus,
+    .close-dialog-form:hover,
+    .close-dialog-form:focus {
+      color: rgb(240, 233, 233);
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+    /** 
+* # tile block 
+**/
+    .joint-group {
+      display: grid;
+      gap: 24px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 24px;
+  }
+
+    .tile {
+      background-color: var(--cosmos-blue);
+      border-radius: calc(var(--golden-ratio) *3);
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      gap: 24px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 400px;
+      min-height: 254px;
+      padding: 40px 32px;
+      place-content: center;
+      text-align: center;
+      width: 100%;
+  }
+
+    .tile__value {
+      color: var(--surely-white);
+      font-size: var(--numbers);
+      letter-spacing: -1.75px;
+      line-height: 42px;
+  }
+
+    .tile__label {
+      color: var(--surely-white);
+      font-size: var(--small-text);
+      letter-spacing: -0.5px;
+      line-height: 22px;
+  }
+
+
+/**
+* # swiper
+*/
+
+.swiper-group {
+    height: calc(267px + 80px);
+    /*399px is the height of the slide, 80px the space bottom*/
+    position: relative;
+    width: 100%;
+}
+
+.swiper--togglable {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* hide all toggleable swipers except the first one */
+.swiper--togglable:not(:first-child) {
+    opacity: 0;
+    z-index: 0;
+}
+
+.slide--nav-item {
+    aspect-ratio: 0;
+    background: none;
+    border-bottom: 2px solid #BCBCBC;
+    border-radius: 0;
+    color: #BCBCBC;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    height: min-content;
+    letter-spacing: -.5px;
+    line-height: 22px;
+    padding: 0 32px 0 0;
+    width: auto;
+}
+
+.slide--nav-item:last-of-type {
+    padding-right: 0;
+}
+
+.slide--nav-item+.slide--nav-item {
+    margin: 0;
+}
+
+.swiper+.swiper-group {
+    margin-top: 40px;
+}
+
+.current .slide__nav-label {
+    border-bottom: 3px solid var(--dark);
+    color: var(--dark);
+}
+
+
+/* override swiper.css for animate properly swiper--infinite */
+.swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* added by custom script */
+    .swiper-wrapper--center {
+        justify-content: center;
+    }
+
+    .swiper-group {
+        height: calc(399px + 100px);
+        /*399px is the height of the slide, 100px the space bottom*/
+    }
+}
+
+
+/** 
+* # mixed swiper
+**/
+
+.slide__grid-container {
+    margin: 60px 0;
+}
+
+.slide__grid {
+    margin-bottom: 60px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .slide__grid-container {
+  max-width: 632px;
+    width: 100%;
+    margin: 60px auto;
+}
+
+.slide__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0;
+}
+}
+
+@media only screen and (min-width: 1066px){
+  .slide__grid-container {
+  max-width: 1018px;
+}
+.slide__grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+}
+/** 
+* # accordion block 
+**/
+
+    .accordion {
+      background: none;
+      border: none;
+      color: var(--cosmos-blue);
+      cursor: pointer;
+      display: block;
+      font-size: var(--small-text);
+      font-weight: var(--semibold);
+      letter-spacing: -0.5px;
+      margin: 0 auto;
+      max-width: 926px;
+      outline: none;
+      padding: 0;
+      text-align: left;
+      transition: 0.4s;
+      width: 100%;
+  }
+
+    .accordion__wrapper {
+      border-bottom: 1px solid #d3d3d3;
+      margin: auto;
+      max-width: 926px;
+      padding: 24px 0 31px;
+      width: calc(100% - 5.8% * 2);
+  }
+
+    .accordion__wrapper:last-child {
+      border-bottom: none;
+  }
+
+    .accordion__label {
+      display: inline-block;
+      width: calc(100% - 22px);
+  }
+
+    .accordion__panel {
+      color: var(--berry-blue);
+      font-size: var(--small-text);
+      letter-spacing: -0.5px;
+      line-height: 22px;
+      margin: 0 auto;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+  }
+
+    .accordion__panel div {
+      margin-bottom: 0;
+      margin-top: 24px;
+  }
+
+    .accordion__panel ul {
+      padding-left: 0;
+  }
+
+    .accordion__panel a {
+      color: var(--juniper-cyan);
+  }
+
+    .accordion:after {
+      -ms-transition: -ms-transform .3s ease-in-out;
+      -webkit-transition: -webkit-transform .3s ease-in-out;
+      background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-364.000000, -7182.000000)'%3E%3Cg transform='translate(364.000000, 7182.000000)'%3E%3Crect fill-opacity='0' fill='%23E9EBED' x='0' y='0' width='20' height='20'%3E%3C/rect%3E%3Cpath d='M16.8580357,14.1401786 C16.5656071,14.1401786 16.2730357,14.0285714 16.0501786,13.8053571 L10.0008929,7.75803571 L3.95089286,13.8080357 C3.50446429,14.2544643 2.78125,14.2544643 2.33482143,13.8080357 C1.88839286,13.3616071 1.88839286,12.6383929 2.33482143,12.1919643 L9.19196429,5.33482143 C9.63839286,4.88839286 10.3616071,4.88839286 10.8080357,5.33482143 L17.6651786,12.1919643 C18.1116071,12.6383929 18.1116071,13.3616071 17.6651786,13.8080357 C17.44375,14.0294643 17.1508929,14.1401786 16.8580357,14.1401786 Z' fill='%2318214D' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      content: '';
+      float: right;
+      height: 22px;
+      transform: rotate(-180deg);
+      transition: transform .3s ease-in-out;
+      width: 22px;
+  }
+
+    .accordion.active:after {
+      content: '';
+      display: inline-block;
+      transform: rotate(0deg);
+  }
+
+    @media only screen and (min-width: 768px) {
+      
+      .accordion__label {
+        font-size: var(--medium-text);
+    }
+
+      .accordion__panel div {
+        margin-top: 32px;
+    }
+  }
+
+    /* ONLY FOR DEMO */
+
+    p.titling {
+      border: 1px dashed;
+      color: #ababab;
+      font-size: 11px;
+      opacity: 1;
+      padding: 3px;
+      position: absolute;
+      top: 0;
+  }
+
+    p.titling span {
+      font-size: 18px;
+  }
+
+  </style>
+</head>
+
+<body>
+  <main>
+
+
+ <!-- # swiper normal / s -->
+ <div class="stack stack--alt">
+  <div class="heading heading--alt">
+    Normal<br />
+- a standard Swiper -  </div>
+  <div class="swiper swiper--default">
+    <div class="slide-group">
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- # swiper normal / e -->
+
+
+
+
+<!-- # swiper infinite / s -->
+<div class="stack">
+  <div class="heading heading--alt">
+    Infinite<br />
+- a carousel Swiper -  </div>
+  <div class="swiper swiper--infinite">
+    <div class="slide-group">
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- # swiper infinite / e -->
+
+
+
+
+
+
+
+
+
+<!-- # swiper infinite with categories / s -->
+<div class="stack stack--alt">
+  <div class="heading heading--alt">
+    Infinite with nav<br />
+- a carousel with categories Swiper -  </div>
+  <!-- swiper / s -->
+  <div class="swiper swiper--nav">
+    <div class="slide-group">
+      <div class="slide slide--nav-item current" data-trigger="a">
+        <span class="slide__nav-label">Group A</span>
+      </div>
+      <div class="slide slide--nav-item" data-trigger="b">
+        <span class="slide__nav-label">Group B</span>
+      </div>
+      <div class="slide slide--nav-item" data-trigger="c">
+        <span class="slide__nav-label">Group C</span>
+      </div>
+      <div class="slide slide--nav-item" data-trigger="d">
+        <span class="slide__nav-label">Group D</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- # swiper-group / s -->
+
+  <div class="swiper-group">
+    <!-- # swiper--infinite a / s -->
+    <!-- swiper / s -->
+    <div class="swiper swiper--infinite swiper--togglable" data-target="a">
+      <div class="slide-group">
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group A</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group A</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group A</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group A</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group A</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group A</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group A</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group A</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- swiper / e -->
+    <!-- # swiper--infinite a / e -->
+
+    <!-- # swiper--infinite b / s -->
+    <!-- swiper / s -->
+    <div class="swiper swiper--infinite swiper--togglable" data-target="b">
+      <div class="slide-group">
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group B</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group B</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group B</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group B</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group B</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group B</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group B</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group B</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- swiper / e -->
+    <!-- # swiper--infinite b / e -->
+
+    <!-- # swiper--infinite c / s -->
+    <!-- swiper / s -->
+    <div class="swiper swiper--infinite swiper--togglable" data-target="c">
+      <div class="slide-group">
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group C</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group C</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group C</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group C</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group C</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group C</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group C</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group C</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- swiper / e -->
+    <!-- # swiper--infinite c / e -->
+
+    <!-- # swiper--infinite d / s -->
+    <!-- swiper / s -->
+    <div class="swiper swiper--infinite swiper--togglable" data-target="d">
+      <div class="slide-group">
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group D</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group D</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group D</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group D</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group D</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group D</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group D</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--light slide--center slide--inverse">
+          <div class="slide__header">
+            <div class="slide__title">Slide<br />group D</div>
+            <div class="slide__copy">
+              Slide__copy here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- swiper / e -->
+    <!-- # swiper--infinite d / e -->
+  </div>
+  <!-- # swiper-group -->
+</div>
+<!-- # swiper infinite with categories / e -->
+
+
+
+
+ <!-- # swiper normal / s -->
+ <div class="stack">
+  <div class="heading heading--alt">
+    Mixed<br />
+- Desktop grid, Carousel mobile -  </div>
+
+<div class="slide__grid-container">
+  <div class="swiper swiper--mixed">
+    <div class="slide-group slide__grid">
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+      <div class="slide slide--light slide--center slide--inverse">
+        <div class="slide__header">
+          <div class="slide__title">Slide<br />title</div>
+          <div class="slide__copy">
+            Slide__copy here
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ </div>
+<!-- # swiper normal / e -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+
+</body>
+
+   <!-- Swiper https://swiperjs.com/ -->
+   <script
+   
+   src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+
+
+  <script>
+
+// # all swiper
+const sliderCheck = document.querySelector(".swiper") !== null;
+if (sliderCheck) {
+  const sliders = document.querySelectorAll(".swiper");
+  for (let slider of sliders) {
+    const groupSlides = slider.querySelectorAll(".slide-group");
+    for (let groupSlide of groupSlides) {
+      groupSlide.classList.add("swiper-wrapper");
+      const slides = groupSlide.querySelectorAll(".slide");
+      for (let slide of slides) {
+        slide.classList.add("swiper-slide");
+      }
+    }
+  }
+}
+
+  // # swiper default
+  let swiperDefault = new Swiper(".swiper--default", {
+    grabCursor: true,
+    slidesOffsetAfter: 24,
+    slidesOffsetBefore: 24,
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    breakpoints: {
+      768: {
+        spaceBetween: 24,
+        slidesOffsetBefore: 90,
+      },
+    },
+    on: {
+      beforeInit: function () {
+        let numOfSlides =
+          this.wrapperEl.querySelectorAll(".swiper-slide").length;
+        //console.log(numOfSlides);
+        if (numOfSlides < 5) {
+          // add class to center the wrapper on desktop view
+          this.wrapperEl.classList.add("swiper-wrapper--center");
+          // reset the slidesOffsetBefore value
+          this.params.breakpoints[768].slidesOffsetBefore = 0;
+          // disable grab cursor
+          this.params.grabCursor = false;
+        }
+      },
+    },
+  });
+
+  // # swiper nav
+  let swiperNav = new Swiper(".swiper--nav", {
+    grabCursor: true,
+    slidesOffsetAfter: 24,
+    slidesOffsetBefore: 24,
+    slidesPerView: "auto",
+    spaceBetween: 0,
+    on: {
+      beforeInit: function () {
+        let numOfSlides =
+          this.wrapperEl.querySelectorAll(".swiper-slide").length;
+        //console.log(numOfSlides);
+        if (numOfSlides < 5) {
+          // add class to center the wrapper on desktop view
+          this.wrapperEl.classList.add("swiper-wrapper--center");
+          // diable grab cursor
+          this.params.grabCursor = false;
+        }
+      },
+    },
+  });
+
+  // # swiper infinite
+  let swiperLoop = new Swiper(".swiper--infinite", {
+    loop: true,
+    freeMode: true,
+    spaceBetween: 16,
+    grabCursor: true,
+    slidesPerView: "auto",
+    loop: true,
+    autoplay: {
+      delay: 0.1,
+      disableOnInteraction: true,
+      /*pauseOnMouseEnter: true,*/
+    },
+    freeMode: true,
+    speed: 5000,
+  });
+
+  // # navigable multiple swiper
+  const toogleLinks = document.querySelectorAll(".slide--nav-item");
+  if (toogleLinks !== null) {
+    for (const toggleLink of toogleLinks) {
+      toggleLink.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        for (const toggleLink of toogleLinks) {
+          toggleLink.classList.remove("current");
+        }
+
+        toggleLink.classList.toggle("current");
+        //console.log(toggleLink.getAttribute('data-trigger'));
+
+        const toggleLinkTarget = toggleLink.getAttribute("data-trigger");
+
+        const togglables = document.querySelectorAll(".swiper--togglable");
+
+        for (const togglable of togglables) {
+          togglable.style.opacity = "0";
+          togglable.style.zIndex = "0";
+          if (togglable.getAttribute("data-target") === toggleLinkTarget) {
+            togglable.style.opacity = "1";
+            togglable.style.zIndex = "1";
+          }
+        }
+      });
+    }
+  }
+
+
+
+
+
+  // # mixed swiper
+
+
+// breakpoint where swiper will be destroyed
+// and switches to a dual-column layout
+const breakpoint = window.matchMedia("(min-width: 768px)");
+// keep track of swiper instances to destroy later
+let swiperMixed;
+
+const breakpointChecker = function () {
+  // if larger viewport and multi-row layout needed
+  if (breakpoint.matches === true && swiperMixed !== undefined) {
+    // clean up old instances and inline styles when available
+    swiperMixed.destroy(true, true);
+    // else if a small viewport and single column layout needed
+  } else if (breakpoint.matches === false) {
+    // fire small viewport version of swiper
+    enableSwiper();
+  }
+};
+
+const enableSwiper = function () {
+  // # swiper default
+  swiperMixed = new Swiper(".swiper--mixed", {
+    slidesOffsetAfter: 24,
+    slidesOffsetBefore: 24,
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+};
+
+// keep an eye on viewport size changes
+breakpoint.addListener(breakpointChecker);
+// kickstart
+
+breakpointChecker();
+
+
+
+  </script>
+</html>

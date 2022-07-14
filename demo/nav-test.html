@@ -117,6 +117,15 @@
 * # navbar ------------------------------------------------------------------------------------------------ MOBILE
 **/
 
+    nav[data-isTransparent=true] {
+      border-bottom: 1px solid #ffffff;
+    }
+
+    nav[data-isTransparent=false],
+    .navbar:hover {
+      border-bottom: 1px solid #f0f0f5;
+    }
+
     main {
       margin-top: 76px;
     }
@@ -199,7 +208,7 @@
       width: 100%;
     }
 
-      .navbar-collapse {
+    .navbar-collapse {
       background-color: #ffffff;
       box-sizing: border-box;
       left: 0;
@@ -218,7 +227,7 @@
       box-shadow: 1px 5px 11px #bababa;
       border-radius: calc(var(--golden-ratio) *2);
       overflow: hidden;
-    } 
+    }
 
     .navbar-collapse.open {
       visibility: visible;
@@ -351,15 +360,19 @@
     .sub-menu {
       margin: 0;
       padding: 0;
+      overflow: hidden;
+      max-height: 0;
+      -webkit-transition: max-height 0.5s;
+      border-bottom: 1px solid #ffffff;
 
     }
 
-    .subrollin {
+    /* .subrollin {
       overflow: hidden;
       max-height: 0;
       -webkit-transition: max-height 0.5s;
       border: none;
-    }
+    } */
 
     .subrollout {
       -webkit-transition: max-height 0.5s;
@@ -370,7 +383,7 @@
     }
 
 
-    .sub-menu.subrollout .menu-item:last-of-type {
+    .sub-menu .menu-item:last-of-type {
       margin-bottom: 15px;
     }
 
@@ -393,10 +406,10 @@
       font-size: var(--button);
       width: max-content;
     }
- 
 
 
-    /**
+
+/**
 * # navbar ------------------------------------------------------------------------------------------------ DESKTOP
 **/
     @media only screen and (min-width: 992px) {
@@ -411,7 +424,7 @@
         padding-left: 40px;
         position: relative;
         width: auto;
-       
+
       }
 
       .navbar-nav li.menu-item a {
@@ -424,14 +437,12 @@
       }
 
       .navbar-nav li.drop-down>a:hover::after {
-    top: 5px;
-    
-}
-   
+        top: 5px;
+      }
 
       #nav li.menu-item.current-menu-item a {
         color: var(--juniper-cyan);
-       
+
       }
 
       .nav {
@@ -492,26 +503,26 @@
         height: 3rem;
       }
 
-     
+
       .navbar-collapse {
         display: flex;
-    align-items: center;
-    -ms-flex-preferred-size: 100%;
-    /* flex-basis: 100%; */
-    -ms-flex-align: center;
-    visibility: visible;
-    min-width: 50vw;
-    width: auto;
-    /* left: 0; */
-    right: 0;
-    overflow: visible;
-    box-shadow: none;
-    border-radius: 0;
-    transition: none;
-    top: auto;
-    transform: none;
-    margin: 0;
-    position: relative;
+        align-items: center;
+        -ms-flex-preferred-size: 100%;
+        /* flex-basis: 100%; */
+        -ms-flex-align: center;
+        visibility: visible;
+        min-width: 50vw;
+        width: auto;
+        /* left: 0; */
+        right: 0;
+        overflow: visible;
+        box-shadow: none;
+        border-radius: 0;
+        transition: none;
+        top: auto;
+        transform: none;
+        margin: 0;
+        position: relative;
       }
 
       .navbar-toggler:focus,
@@ -588,8 +599,8 @@
         padding: 12px 24px 16px;
         font-size: 16px;
         display: block;
-    width: max-content;
-
+        width: max-content;
+        font-weight: var(--semibold);
       }
 
       .navbar-collapse .navbar-brand__image {
@@ -607,6 +618,7 @@
       .sub-menu {
         margin-top: 0;
         margin-bottom: 0;
+        max-height: max-content;
       }
 
       .sub-menu .nav-link {
@@ -628,18 +640,18 @@
 
       .navbar-collapse.offcanvas-collapse {
         flex-basis: content;
-    position: relative;
-    visibility: visible;
-    width: auto;
-    box-shadow: none;
-    border-radius: 0;
-    top: 0;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
+        position: relative;
+        visibility: visible;
+        width: auto;
+        box-shadow: none;
+        border-radius: 0;
+        top: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
       }
 
       .drop-down>ul {
@@ -649,8 +661,6 @@
         padding: 25px;
       }
 
-
-       
       .drop-down>ul {
         background-color: #fff;
         background-clip: padding-box;
@@ -677,22 +687,21 @@
 
       .drop-down>ul:before {
         border-style: solid;
-    border-width: 1px 37px;
-    border-color: var(--accent);
-    content: "";
-    height: 0;
-    left: 0;
-    /* margin-left: -10px; */
-    position: absolute;
-    top: 0px;
-    width: 0;
-    z-index: 9999;
+        border-width: 1px 37px;
+        border-color: var(--accent);
+        content: "";
+        height: 0;
+        left: 0;
+        /* margin-left: -10px; */
+        position: absolute;
+        top: 0px;
+        width: 0;
+        z-index: 9999;
       }
 
       #nav .sub-menu li {
         line-height: 20px;
-        margin-bottom: 16px
-        position: relative;
+        margin-bottom: 16px position: relative;
         text-align: left;
         padding: 5px 0;
       }
@@ -701,10 +710,6 @@
         color: rgba(32, 32, 32, .7);
         font-weight: 500;
         padding: 0;
-      }
-
-      .subrollin{
-        max-height: max-content;
       }
 
       .d-none {
@@ -725,8 +730,8 @@
 
       .navbar-expand-lg .navbar-nav {
         display: flex;
-    flex-direction: row;
-    
+        flex-direction: row;
+
       }
 
       #nav-content {
@@ -738,31 +743,21 @@
       }
     }
 
-    
 
+    @media only screen and (min-width: 991px) and (max-width: 1055px) {
 
-    main {
-      margin-top: 100px;
+      .navbar-nav li.menu-item a,
+      #nav li.menu-item.cta__button a {
+        font-size: 13px;
+      }
     }
-
-    nav[data-isTransparent=true] {
-      border-bottom: 1px solid #ffffff;
-    }
-
-    nav[data-isTransparent=false],
-    .navbar:hover {
-      border-bottom: 1px solid #f0f0f5;
-    }
-
-
-  
   </style>
 </head>
 
 <body style="background:var(--chilly-yellow);">
   <nav id="nav" class="navbar navbar-expand-lg" data-isTransparent="true">
     <div class="container">
-      <a title="Planet Smart City" class="navbar-brand" href="https://planetsmartcity.in" style="z-index: 2000;"
+      <a title="Planet Smart City" class="navbar-brand" href="#" style="z-index: 2000;"
         aria-label="Homepage">
         <svg class="navbar-brand__image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583.89 255.84">
           <defs>
@@ -855,7 +850,6 @@
     <div class="overlay"></div>
 
 
-
   </main>
 
 
@@ -863,13 +857,11 @@
 
     // #nav
     const navCheck = document.querySelector(".navbar") !== null;
-
     if (navCheck) {
       const offCanvas = document.querySelector("[data-toggle='offcanvas']");
       const collapse = document.querySelector(".navbar-collapse");
       const overlay = document.querySelector(".overlay");
       const navbar = document.querySelector(".navbar-nav");
-
       offCanvas.onclick = function () {
         collapse.classList.toggle("open");
         offCanvas.classList.toggle("burgeron");
@@ -877,30 +869,16 @@
         for (const li of document.querySelectorAll("li.activeitem")) {
           li.classList.remove("activeitem");
         }
-        for (const droppy of document.querySelectorAll(".subrollout")) {
-          droppy.classList.remove("subrollout");
-          droppy.classList.add("subrollin");
+        for (const dropPanel of document.querySelectorAll(".subrollout")) {
+          dropPanel.classList.remove("subrollout");
         }
-
       };
 
-
-      /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
       const nav = document.querySelector("nav");
       const navHeight = nav.offsetHeight;
       const transparencyOffset = 200;
-
       let prevScrollpos = document.pageYOffset;
       document.onscroll = function () {
-        //console.log(navHeight);
-        // let currentScrollPos = window.pageYOffset;
-        // if (prevScrollpos > currentScrollPos || window.pageYOffset < 50) {
-        //     nav.style.top = "0";
-        // } else {
-        //     nav.style.top = "-" + nav.offsetHeight + "px";
-        // }
-        // prevScrollpos = currentScrollPos;
-
         /* Add dynamic transparency to nav */
         if (nav.getAttribute("data-isTransparent")) {
           if (
@@ -916,31 +894,23 @@
       };
     }
 
-
-
-
-
-    if (window.innerWidth < 992) { // code for large screens
-
     const dropDownCheck = document.querySelector(".drop-down") !== null;
-    if (dropDownCheck) {
+    if (window.innerWidth < 992 && dropDownCheck) { // code for large screens
+
       const dropDowns = document.querySelectorAll(".drop-down.menu-item");
       for (const dropDown of dropDowns) {
         dropDown.addEventListener("click", function () {
           this.classList.toggle("activeitem");
           let sub = dropDown.querySelector('ul');
           if (sub.classList.contains('subrollout')) {
-            sub.classList.add("subrollin");
             sub.classList.remove("subrollout");
           } else {
             sub.classList.add("subrollout");
-            sub.classList.remove("subrollin");
           }
         });
 
       }
     }
-  }
   </script>
 </body>
 
